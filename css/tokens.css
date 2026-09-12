@@ -26,13 +26,15 @@
   /* ---- Typography ------------------------------------------------------- */
   /* Display serif  -> approximates the tall high-contrast "PORTFOLIO" serif */
   --font-display: "Cormorant Garamond", "Times New Roman", serif;
+  /* Hero word ("Portfolio") -> Asset fat-face display serif */
+  --font-hero:    "Asset", "Cormorant Garamond", serif;
   /* Body serif     -> Info page body & section headings                     */
   --font-serif:   "EB Garamond", Georgia, "Times New Roman", serif;
   /* Sans           -> nav, UI, and bold sans display headings               */
   --font-sans:    "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
 
   /* Fluid type scale (min .. max via clamp) */
-  --fs-hero:   clamp(4rem, 16vw, 15rem);
+  --fs-hero:   clamp(2.4rem, 8.5vw, 7rem);  /* sized for the wide Asset fat-face */
   --fs-d1:     clamp(2.6rem, 7vw, 6rem);
   --fs-d2:     clamp(2rem, 4.5vw, 3.5rem);
   --fs-h1:     clamp(1.9rem, 3.4vw, 2.9rem);
