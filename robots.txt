@@ -1,0 +1,7 @@
+# Keep the whole site out of search engines while it's a work in progress.
+# When you're ready to be discoverable, change to:
+#   User-agent: *
+#   Disallow:
+# and remove the <meta name="robots" content="noindex, nofollow"> tags from the HTML.
+User-agent: *
+Disallow: /

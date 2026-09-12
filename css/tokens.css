@@ -1,0 +1,68 @@
+/* =========================================================================
+   tokens.css — Design tokens (colors, type, spacing)
+   Single source of truth. Change values here to re-theme the whole site.
+   These approximate the Squarespace draft; swap for exact brand values later.
+   ========================================================================= */
+
+:root {
+  /* ---- Color palette ---------------------------------------------------- */
+  --c-black:      #000000;
+  --c-near-black: #0c0c0c;
+  --c-cream:      #e9e7e3;  /* warm light-gray sections */
+  --c-cream-2:    #efedea;
+  --c-taupe:      #6e6862;  /* project-page background   */
+  --c-lilac:      #b6acc6;  /* dusty-lilac display accent */
+  --c-lilac-soft: #c9c1d6;
+  --c-white:      #f3f2f0;
+  --c-ink:        #131313;  /* text on light backgrounds */
+  --c-ink-soft:   #3a3a3a;
+
+  /* ---- Semantic text colors -------------------------------------------- */
+  --on-dark:      rgba(243, 242, 240, 0.92);
+  --on-dark-dim:  rgba(243, 242, 240, 0.66);
+  --on-light:     var(--c-ink);
+  --on-light-dim: var(--c-ink-soft);
+
+  /* ---- Typography ------------------------------------------------------- */
+  /* Display serif  -> approximates the tall high-contrast "PORTFOLIO" serif */
+  --font-display: "Cormorant Garamond", "Times New Roman", serif;
+  /* Body serif     -> Info page body & section headings                     */
+  --font-serif:   "EB Garamond", Georgia, "Times New Roman", serif;
+  /* Sans           -> nav, UI, and bold sans display headings               */
+  --font-sans:    "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+
+  /* Fluid type scale (min .. max via clamp) */
+  --fs-hero:   clamp(4rem, 16vw, 15rem);
+  --fs-d1:     clamp(2.6rem, 7vw, 6rem);
+  --fs-d2:     clamp(2rem, 4.5vw, 3.5rem);
+  --fs-h1:     clamp(1.9rem, 3.4vw, 2.9rem);
+  --fs-h2:     clamp(1.4rem, 2.4vw, 2rem);
+  --fs-h3:     1.25rem;
+  --fs-lead:   clamp(1.05rem, 1.4vw, 1.3rem);
+  --fs-body:   1.0625rem;
+  --fs-small:  0.9rem;
+  --fs-nav:    1.0625rem;
+
+  --lh-tight:  1.05;
+  --lh-snug:   1.28;
+  --lh-body:   1.65;
+
+  /* ---- Spacing scale ---------------------------------------------------- */
+  --sp-1: 0.5rem;
+  --sp-2: 1rem;
+  --sp-3: 1.5rem;
+  --sp-4: 2rem;
+  --sp-5: 3rem;
+  --sp-6: 4.5rem;
+  --sp-7: 6.5rem;
+  --sp-8: 9rem;
+
+  /* ---- Layout ----------------------------------------------------------- */
+  --container:      1240px;
+  --container-wide: 1440px;
+  --gutter:         clamp(1.25rem, 5vw, 4rem);
+  --nav-h:          72px;
+  --radius:         2px;
+
+  --transition: 200ms ease;
+}

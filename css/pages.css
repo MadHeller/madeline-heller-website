@@ -1,0 +1,149 @@
+/* =========================================================================
+   pages.css — Page-specific layouts
+   ========================================================================= */
+
+/* =========================================================================
+   HOME — hero
+   ========================================================================= */
+.hero {
+  position: relative;
+  padding-top: var(--sp-4);
+  padding-bottom: var(--sp-6);
+  overflow: clip;
+}
+.hero__email {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: var(--fs-lead);
+  opacity: 0.85;
+  margin-bottom: var(--sp-2);
+}
+/* Oversized lilac display word sitting behind the portrait */
+.hero__word {
+  font-family: var(--font-display);
+  font-weight: 600;
+  color: var(--c-lilac);
+  font-size: var(--fs-hero);
+  line-height: 0.86;
+  letter-spacing: -0.01em;
+  margin: 0;
+  pointer-events: none;
+  user-select: none;
+}
+.hero__grid {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 0.9fr;
+  gap: clamp(1.5rem, 4vw, 3.5rem);
+  margin-top: var(--sp-3);
+  align-items: start;
+}
+.hero__portrait {
+  align-self: start;
+  z-index: 1;
+  margin-top: calc(var(--fs-hero) * -0.42);  /* only the portrait rises into the word */
+}
+.hero__portrait .placeholder { aspect-ratio: 4 / 5; }
+.hero__bio { max-width: 46ch; }
+.hero__bio p { font-size: var(--fs-body); }
+.hero__name {
+  font-family: var(--font-sans);
+  font-weight: 500;
+  font-size: clamp(1.6rem, 3vw, 2.4rem);
+  margin-top: var(--sp-4);
+}
+.hero__role {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: var(--fs-lead);
+  opacity: 0.9;
+  margin-top: var(--sp-1);
+  margin-bottom: var(--sp-4);
+}
+@media (max-width: 820px) {
+  .hero__grid { grid-template-columns: 1fr; margin-top: var(--sp-2); }
+  .hero__portrait { margin-top: var(--sp-2); }  /* no overlap when stacked */
+  .hero__word { font-size: clamp(3.2rem, 20vw, 7rem); }
+}
+
+/* Home: "Latest Project(s)" list */
+.project-list li { margin-bottom: var(--sp-2); font-size: var(--fs-lead); font-family: var(--font-serif); }
+.project-list--bullets { margin-top: var(--sp-2); padding-left: var(--sp-3); }
+.project-list--bullets li { list-style: disc; margin-bottom: var(--sp-1); }
+
+/* Home: "Select Works" — thumbnails + oversized lilac index */
+.works {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: var(--sp-2);
+  margin-bottom: var(--sp-5);
+}
+@media (max-width: 720px) { .works { grid-template-columns: repeat(2, 1fr); } }
+.works .placeholder { aspect-ratio: 3 / 4; }
+.work-index li {
+  font-family: var(--font-sans);
+  font-weight: 800;
+  text-transform: uppercase;
+  font-size: clamp(1.5rem, 4vw, 3rem);
+  line-height: 1.1;
+  color: var(--c-lilac);
+  opacity: 0.85;
+  transition: opacity var(--transition), transform var(--transition);
+}
+.work-index li a { display: block; }
+.work-index li:hover { opacity: 1; transform: translateX(10px); }
+.work-index li::before { content: "· "; }
+
+/* =========================================================================
+   INFO
+   ========================================================================= */
+.info-intro { padding-block: var(--sp-6); }
+.info-portrait .placeholder { aspect-ratio: 3 / 4; }
+.info-contact { font-family: var(--font-serif); font-size: var(--fs-lead); }
+.info-contact .info-name {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: var(--fs-d2);
+  margin-bottom: var(--sp-3);
+}
+.info-contact p { margin-bottom: var(--sp-3); }
+
+/* résumé-style blocks */
+.resume-block { margin-bottom: var(--sp-5); }
+.resume-block__org { font-family: var(--font-serif); font-size: var(--fs-lead); }
+.resume-block__role { font-family: var(--font-serif); font-style: italic; margin-block: var(--sp-1) var(--sp-2); opacity: 0.9; }
+.resume-list li {
+  list-style: disc;
+  margin-left: var(--sp-3);
+  margin-bottom: var(--sp-2);
+  font-family: var(--font-serif);
+  max-width: 90ch;
+}
+.skills-group { margin-bottom: var(--sp-4); }
+.skills-group h3 { font-family: var(--font-serif); font-style: italic; font-weight: 700; margin-bottom: var(--sp-2); }
+.skills-group li { list-style: disc; margin-left: var(--sp-3); margin-bottom: var(--sp-1); font-family: var(--font-serif); }
+
+.meta-cols { display: grid; grid-template-columns: 1fr 1fr; gap: var(--sp-5); }
+@media (max-width: 720px) { .meta-cols { grid-template-columns: 1fr; } }
+.meta-cols h3 {
+  font-family: var(--font-serif); font-weight: 700;
+  text-decoration: underline; text-underline-offset: 4px;
+  margin-bottom: var(--sp-3); color: var(--c-lilac-soft);
+}
+.meta-cols li, .meta-cols p { font-family: var(--font-serif); margin-bottom: var(--sp-1); }
+
+/* =========================================================================
+   PROJECT PAGES (Virtual Exhibition, Migration, Dissertation, Post-Maoism)
+   ========================================================================= */
+.project-hero { padding-block: var(--sp-6); }
+.project-hero__subtitle {
+  font-family: var(--font-serif);
+  font-size: var(--fs-d2);
+  margin-block: var(--sp-3) var(--sp-4);
+  max-width: 22ch;
+}
+.project-hero__meta { margin-top: var(--sp-4); font-family: var(--font-sans); opacity: 0.85; }
+.project-body .prose p { font-family: var(--font-sans); margin-bottom: var(--sp-3); max-width: 78ch; }
+.bg-light .project-body .prose p { color: var(--on-light); }
+.project-figures { display: grid; grid-template-columns: 1fr 1fr; gap: var(--sp-4); align-items: start; margin-top: var(--sp-5); }
+@media (max-width: 720px) { .project-figures { grid-template-columns: 1fr; } }
