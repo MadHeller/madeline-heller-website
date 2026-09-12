@@ -1,7 +1,7 @@
 /* =========================================================================
    tokens.css — Design tokens (colors, type, spacing)
    Single source of truth. Change values here to re-theme the whole site.
-   These approximate the Squarespace draft; swap for exact brand values later.
+   These approximate the intended design; swap for exact brand values later.
    ========================================================================= */
 
 :root {

@@ -20,6 +20,9 @@ bigger", "add a photo here", "change the About text"). Your job:
   She can't catch mistakes for you.
 - **Never leave the site in a broken state.** If a change doesn't work, revert
   it rather than shipping something half-done.
+- **She does not use git.** You publish for her (see §11) — but ONLY after she
+  gives an explicit go-ahead. By default, make changes locally and let her
+  preview them first; do not commit or push until she says to.
 
 ---
 
@@ -112,9 +115,9 @@ All colors, fonts, and spacing are CSS variables in
 hard-coding hex colors, pixel spacing, or font names in page HTML/CSS.
 
 - Re-theming the whole site = editing values in `tokens.css`.
-- Fonts are Google Fonts (Cormorant Garamond, EB Garamond, Inter) chosen to
-  approximate the original Squarespace typefaces. If the owner wants the exact
-  fonts, swap the `<link>` in each page's `<head>` and the `--font-*` tokens.
+- Fonts are Google Fonts (Cormorant Garamond, EB Garamond, Inter, plus Asset for
+  the hero word). If the owner wants different typefaces, swap the `<link>` in
+  each page's `<head>` and the `--font-*` tokens.
 - The three page "themes" (`theme-home`, `theme-info`, `theme-project` on the
   `<body>`) set background/nav colors. Reuse them; don't invent per-page colors.
 
@@ -233,25 +236,61 @@ You are the last line of defense. Before telling the owner a change is done:
 
 If anything is off, fix it before reporting. Don't claim success you didn't see.
 
+### 10.1 Letting her preview on localhost
+When she wants to see the current state ("show me", "let me see it", "open it"),
+start the local preview server and give her the link to open:
+```bash
+cd ~/Desktop/madeline-heller-website && python3 -m http.server 8000
+```
+Tell her to open **http://localhost:8000** in her browser, and that this preview
+is private to her computer — nothing is public until she asks you to publish. If
+port 8000 is busy, use 8001. Leave the server running while she reviews; she can
+refresh the page after you make more changes.
+
 ---
 
-## 11. Saving & publishing changes
+## 11. Publishing changes — YOU do the git, and ONLY on her go-ahead
 
-The owner uses this loop to publish. After you've made and verified changes:
+**The owner does not know git and will never run git commands.** Publishing is
+your job. But it is **not** automatic.
+
+**Default: iterate locally.** Make the change, verify it (§10), let her preview
+it on localhost (§10.1). **Do NOT commit or push until she explicitly tells you
+to.** Localhost is private to her computer; nothing is public until you push.
+
+**When she gives the go-ahead, publish:**
 
 ```bash
 cd ~/Desktop/madeline-heller-website
 git add -A
-git commit -m "Short description of what changed"
+git commit -m "Short plain-English description of what changed"
 git push
 ```
 
-Within ~1 minute GitHub Pages redeploys automatically. The live URL is the
-GitHub Pages URL for this repo (and later, her custom domain).
+Then tell her in one sentence, e.g. *"Published — it'll be live in about a
+minute."* Within ~1 minute GitHub Pages redeploys automatically.
 
-- Keep commits focused and messages plain-English.
-- Never commit secrets, tokens, or large unneeded binaries.
-- Never force-push or rewrite history unless she explicitly asks.
+Phrases that mean "publish now / go-ahead to push": *"publish", "make it live",
+"put it online", "push it", "ship it", "update the live site", "deploy",
+"looks good, publish".* If she only says a change looks good but doesn't ask to
+publish, keep iterating — don't push yet. If in doubt, ask: *"Want me to publish
+this so it goes live?"*
+
+Rules:
+- **Only publish a verified, working change.** If something is broken, fix or
+  revert first — never push a broken site (§2.7, §10). A bad push goes live.
+- Keep commits focused; write plain-English commit messages.
+- **Never** commit secrets, tokens, API keys, or large unneeded binaries.
+- **Never** force-push or rewrite history unless she explicitly asks.
+- If a push fails on authentication, do NOT ask her for a password or token in
+  chat. Tell her: *"The GitHub login for pushing has expired — you'll need a
+  developer to refresh it,"* and stop. (Auth is stored in the macOS keychain by
+  whoever set the project up.)
+
+### If git isn't set up yet in a fresh copy
+If `git push` fails because there's no remote or no auth, the repo may be a fresh
+clone. Report this plainly rather than guessing credentials — a developer needs
+to connect it once.
 
 ---
 
