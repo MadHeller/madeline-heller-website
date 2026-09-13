@@ -44,6 +44,16 @@
   margin-top: calc(var(--fs-hero) * -0.42);  /* only the portrait rises into the word */
 }
 .hero__portrait .placeholder { aspect-ratio: 4 / 5; }
+/* Portrait photo fills the 4:5 spot */
+.hero__portrait img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  object-position: center;
+  background: var(--c-cream);
+  border-radius: var(--radius);
+}
 .hero__bio { max-width: 46ch; }
 .hero__bio p { font-size: var(--fs-body); }
 .hero__name {
