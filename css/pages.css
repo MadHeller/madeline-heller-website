@@ -133,16 +133,19 @@
   font-family: var(--font-display);
   font-size: var(--fs-d2);
   text-align: center;
-  margin-bottom: var(--sp-3);
+  margin-bottom: var(--sp-4);
 }
 .about__body p {
   font-family: var(--font-serif);
   font-size: var(--fs-lead);
   max-width: 60ch;
-  margin-bottom: var(--sp-3);
+  margin-bottom: var(--sp-4);
 }
-@media (max-width: 820px) {
-  .about__title { text-align: left; }
+.about__latest { margin-top: var(--sp-5); }
+/* Desktop: drop the photo so its top lines up with the first paragraph,
+   i.e. just below the centered "About." heading */
+@media (min-width: 821px) {
+  .about__media { margin-top: calc(var(--fs-d2) * 1.28 + var(--sp-4)); }
 }
 
 /* =========================================================================
