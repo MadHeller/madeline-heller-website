@@ -5,7 +5,12 @@
 /* ---- Minimal modern reset ------------------------------------------------ */
 *, *::before, *::after { box-sizing: border-box; }
 * { margin: 0; }
-html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+html {
+  -webkit-text-size-adjust: 100%;
+  scroll-behavior: smooth;
+  overflow-x: clip;   /* stop the off-screen mobile menu from causing sideways scroll;
+                         `clip` (not `hidden`) so it doesn't break the sticky header */
+}
 body {
   min-height: 100vh;
   font-family: var(--font-sans);
@@ -42,11 +47,11 @@ body.theme-info {
   --nav-scrolled-bg: rgba(0, 0, 0, 0.92);
 }
 body.theme-project {
-  --page-bg: var(--c-taupe);
+  --page-bg: var(--c-black);
   --page-fg: var(--on-dark);
-  --nav-fg:  #1b1b1b;
+  --nav-fg:  var(--c-white);
   --nav-bg:  transparent;
-  --nav-scrolled-bg: rgba(110, 104, 98, 0.82);
+  --nav-scrolled-bg: rgba(0, 0, 0, 0.92);   /* solid over the cream sections */
 }
 
 /* ---- Section background utilities --------------------------------------- */
