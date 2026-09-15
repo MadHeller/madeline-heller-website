@@ -28,9 +28,9 @@
   };
 
   var SOCIAL = [
-    { label: "Instagram", href: "#" },
+    { label: "Instagram", href: "https://www.instagram.com/maddy_heller_/?hl=en" },
     { label: "Email",     href: "mailto:Madeline-Heller@outlook.com" },
-    { label: "LinkedIn",  href: "#" }
+    { label: "LinkedIn",  href: "https://www.linkedin.com/in/madeline-heller-95a119304" }
   ];
 
   /* ---- Helpers ---------------------------------------------------------- */
@@ -96,7 +96,8 @@
   /* ---- Build footer ----------------------------------------------------- */
   function buildFooter(mount) {
     var social = SOCIAL.map(function (s) {
-      return '<a href="' + s.href + '">' + s.label + "</a>";
+      var ext = /^https?:/.test(s.href) ? ' target="_blank" rel="noopener"' : "";
+      return '<a href="' + s.href + '"' + ext + ">" + s.label + "</a>";
     }).join("");
 
     var footer = el("footer", { class: "site-footer" });
