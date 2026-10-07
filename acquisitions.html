@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Acquisitions — Madeline Heller</title>
+  <meta name="description" content="Works of art currently available for acquisition, and a way to tell Madeline Heller what you are looking for.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Asset&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@400;500;600;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/tokens.css?v=20261007k">
+  <link rel="stylesheet" href="css/base.css?v=20261007k">
+  <link rel="stylesheet" href="css/components.css?v=20261007k">
+  <link rel="stylesheet" href="css/pages.css?v=20261007k">
+  <script src="js/site.js?v=20261007k" defer></script>
+  <script src="js/contact.js?v=20261007k" defer></script>
+  <script src="js/gallery.js?v=20261007k" defer></script>
+</head>
+<body class="theme-project">
+  <div data-nav></div>
+
+  <main>
+    <section class="project-hero">
+      <div class="container">
+        <h1 class="display-sans">Acquisitions</h1>
+        <p class="project-hero__subtitle">Works available for acquisition</p>
+        <p class="prose" style="font-family:var(--font-sans); max-width:62ch; margin-top: var(--sp-3);">
+          A selection of works I currently have available. Prices are available on request.
+          If you are looking for a particular artist or work, or would like to see the full
+          portfolio, send me a note below.
+        </p>
+        <nav class="jump" aria-label="Jump to a section">
+          <a href="#available">Available works</a>
+          <a href="#inquire">Inquire</a>
+        </nav>
+      </div>
+    </section>
+
+    <!-- ================= AVAILABLE WORKS =================
+         HOW TO ADD A WORK: copy the whole <article class="acq-work"> block below, then
+         replace the images, artist, title, details and status, and change data-work to
+         "Artist, Title". Status can be: Available, Reserved or Sold (use the matching
+         acq-work__status--available / --reserved / --sold class). -->
+    <section class="section--tight acq-section" id="available">
+      <div class="container">
+        <h2 class="about__title">Available Works</h2>
+
+        <div class="acq-grid">
+
+          <article class="acq-work">
+            <div class="acq-work__image">
+              <a class="g-link" href="assets/images/acquisitions/ken-orton-attention-front.jpg" data-caption="Ken Orton, Attention (front)">
+                <img src="assets/images/acquisitions/ken-orton-attention-front.jpg" width="1254" height="1254" alt="Attention, a limited edition giclée print by Ken Orton: a close-up still life of vintage glass jars and bottles with embossed lettering, shown in a white mat, signed and numbered in pencil.">
+              </a>
+              <a class="g-link acq-work__back" href="assets/images/acquisitions/ken-orton-attention-back.jpg" data-caption="Ken Orton, Attention (back: giclée certificate)">
+                <img src="assets/images/acquisitions/ken-orton-attention-back-t.jpg" width="360" height="360" alt="The back of the print: a Ken Orton gallery giclée certificate with the title, size, edition number and the artist&rsquo;s signature.">
+                <span>View the back and certificate</span>
+              </a>
+            </div>
+            <div class="acq-work__info">
+              <p class="acq-work__artist">Ken Orton</p>
+              <h3 class="acq-work__title"><em>Attention</em></h3>
+              <p class="acq-work__meta">Limited edition giclée on paper, hand finished by the artist<br>Matted, with hard backing board<br>11 &times; 14 in.<br>Signed and numbered 3/500<br>With the gallery&rsquo;s giclée certificate</p>
+              <p class="acq-work__status acq-work__status--available">Available</p>
+              <p class="acq-work__price">Price on request</p>
+              <a class="btn acq-work__inquire" href="#inquire" data-work="Ken Orton, Attention">Inquire about this work</a>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= INQUIRE ================= -->
+    <section class="section inquiries" id="inquire">
+      <div class="container">
+        <h2 class="about__title">Inquire</h2>
+        <p class="inquiries__intro">
+          Interested in a work, searching for something specific, or would like to see the
+          full portfolio? Tell me a little about what you have in mind and I&rsquo;ll be in touch.
+        </p>
+
+        <form class="inquiry" data-endpoint="https://formspree.io/f/xyekejkr" method="post" aria-describedby="inquiry-status">
+          <div class="inquiry__row">
+            <div class="inquiry__field">
+              <label for="inq-name">Name</label>
+              <input id="inq-name" name="name" type="text" autocomplete="name" required maxlength="100">
+            </div>
+            <div class="inquiry__field">
+              <label for="inq-email">Email</label>
+              <input id="inq-email" name="email" type="email" autocomplete="email" required maxlength="150">
+            </div>
+          </div>
+
+          <div class="inquiry__field">
+            <label for="inq-type">I am interested in</label>
+            <select id="inq-type" name="inquiry_type">
+              <option>A work listed above</option>
+              <option>A work I am looking for</option>
+              <option>The full portfolio</option>
+              <option>Something else</option>
+            </select>
+          </div>
+
+          <div class="inquiry__field">
+            <label for="inq-work">Work or artist <span class="inquiry__optional">(optional)</span></label>
+            <input id="inq-work" name="work_or_artist" type="text" maxlength="200">
+          </div>
+
+          <div class="inquiry__field">
+            <label for="inq-message">Message</label>
+            <textarea id="inq-message" name="message" required minlength="10" maxlength="5000"></textarea>
+          </div>
+
+          <!-- Spam trap: hidden from people; bots tend to fill it in -->
+          <div class="inquiry__hp" aria-hidden="true">
+            <label for="inq-website">Leave this field empty</label>
+            <input id="inq-website" name="_gotcha" type="text" tabindex="-1" autocomplete="off">
+          </div>
+          <input type="hidden" name="_subject" value="Acquisitions inquiry from madelineheller.com">
+          <input type="hidden" name="form_page" value="Acquisitions">
+
+          <div class="inquiry__actions">
+            <button class="btn" type="submit">Send inquiry</button>
+            <p class="inquiry__status" id="inquiry-status" role="status" aria-live="polite"></p>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <div data-footer></div>
+</body>
+</html>

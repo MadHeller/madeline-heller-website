@@ -24,6 +24,20 @@
     status.innerHTML = html;
   }
 
+  // "Inquire about this work" buttons (Acquisitions page) fill in the form for the visitor.
+  var workButtons = document.querySelectorAll("a[data-work]");
+  Array.prototype.forEach.call(workButtons, function (a) {
+    a.addEventListener("click", function () {
+      if (form.elements["work_or_artist"]) form.elements["work_or_artist"].value = a.getAttribute("data-work");
+      if (form.elements["inquiry_type"]) form.elements["inquiry_type"].value = "A work listed above";
+      // after the page scrolls to the form, put the cursor in the message box
+      setTimeout(function () {
+        var msg = form.elements["message"];
+        if (msg) msg.focus({ preventScroll: true });
+      }, 400);
+    });
+  });
+
   form.addEventListener("submit", function (e) {
     e.preventDefault();
 

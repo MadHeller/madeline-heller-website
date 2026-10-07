@@ -70,6 +70,11 @@
   margin-top: var(--sp-1);
   margin-bottom: var(--sp-4);
 }
+/* Home hero: two stacked buttons of equal width; the second is the secondary (outlined) style */
+.hero__buttons { display: flex; flex-direction: column; gap: var(--sp-2); width: max-content; max-width: 100%; }
+.hero__buttons .btn { text-align: center; border: 1px solid var(--c-lilac); }
+.btn--outline { background: transparent; color: var(--c-lilac); font-weight: 600; }
+.btn--outline:hover { background: var(--c-lilac); color: #1c1922; }
 @media (max-width: 820px) {
   .hero__grid { grid-template-columns: 1fr; margin-top: var(--sp-2); }
   .hero__portrait { margin-top: var(--sp-2); }  /* no overlap when stacked */
@@ -162,6 +167,8 @@
   max-width: 52ch;
   margin: 0 auto var(--sp-5);
 }
+.inquiries__acq { text-align: center; max-width: none; margin: calc(var(--sp-3) * -1) 0 var(--sp-5); font-family: var(--font-serif); font-size: var(--fs-lead); }
+.inquiries__acq .btn { margin-left: var(--sp-2); }
 .inquiry { max-width: 720px; margin-inline: auto; display: grid; gap: var(--sp-3); }
 .inquiry__row { display: grid; grid-template-columns: 1fr 1fr; gap: var(--sp-3); }
 @media (max-width: 620px) { .inquiry__row { grid-template-columns: 1fr; } }
@@ -192,6 +199,41 @@
 .inquiry__status { font-family: var(--font-serif); font-style: italic; font-size: var(--fs-lead); margin: 0; max-width: none; }
 .inquiry__status--ok { color: var(--c-lilac-soft); }
 .inquiry__status--error { color: var(--on-dark); }
+
+/* Acquisitions — available works (shown whole, never cropped) */
+.acq-section { padding-top: var(--sp-6); scroll-margin-top: var(--nav-h); }
+.acq-grid {
+  display: grid;
+  /* cards are 300-400px wide and centered, so one work (or a few) sits in the middle */
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 400px));
+  justify-content: center;
+  align-items: start;
+  gap: var(--sp-6) var(--sp-4);
+  margin-top: var(--sp-5);
+}
+.acq-work { display: flex; flex-direction: column; }
+.acq-work__image { border-radius: var(--radius); }
+.acq-work__image img {
+  display: block;
+  width: 100%;
+  height: auto;              /* shown at its natural shape: the whole work, never cropped */
+  border-radius: var(--radius);
+}
+.acq-work__image .placeholder { aspect-ratio: 4 / 5; }
+.acq-work__image .acq-work__back { display: flex; align-items: center; gap: var(--sp-2); margin-top: var(--sp-2); }
+.acq-work__back img { width: 64px; height: 64px; object-fit: cover; flex: none; }
+.acq-work__back span { font-family: var(--font-serif); font-style: italic; font-size: var(--fs-small); text-decoration: underline; text-underline-offset: 3px; }
+.acq-work__info { display: flex; flex-direction: column; align-items: flex-start; padding-top: var(--sp-3); flex: 1; }
+.acq-work__artist { font-family: var(--font-sans); font-weight: 800; text-transform: uppercase; letter-spacing: 0.02em; font-size: 0.95rem; color: var(--c-lilac); margin: 0; }
+.acq-work__title { font-family: var(--font-serif); font-weight: 400; font-size: var(--fs-lead); line-height: var(--lh-snug); margin-top: var(--sp-1); }
+.acq-work__meta { font-family: var(--font-serif); font-size: var(--fs-small); opacity: 0.8; margin-top: var(--sp-1); }
+.acq-work__status { font-family: var(--font-sans); font-size: 0.78rem; letter-spacing: 0.08em; text-transform: uppercase; margin: var(--sp-2) 0 0; }
+.acq-work__status::before { content: ""; display: inline-block; width: 0.55em; height: 0.55em; border-radius: 50%; margin-right: 0.6em; background: currentColor; }
+.acq-work__status--available { color: var(--c-lilac-soft); }
+.acq-work__status--reserved,
+.acq-work__status--sold { color: var(--on-dark-dim); }
+.acq-work__price { font-family: var(--font-serif); font-style: italic; margin: var(--sp-1) 0 var(--sp-3); }
+.acq-work__inquire { margin-top: auto; }
 
 /* =========================================================================
    INFO

@@ -32,7 +32,8 @@
     { label: "Instagram", href: "https://www.instagram.com/maddy_heller_/?hl=en" },
     { label: "Email",     href: "mailto:Madeline-Heller@outlook.com" },
     { label: "LinkedIn",  href: "https://www.linkedin.com/in/madeline-heller-95a119304" },
-    { label: "Inquiries", href: "index.html#inquiries" }
+    { label: "Inquiries", href: "index.html#inquiries" },
+    { label: "Acquisitions", href: "acquisitions.html" }
   ];
 
   /* ---- Helpers ---------------------------------------------------------- */
@@ -111,7 +112,7 @@
         '<p class="site-footer__row">' + CONTACT.location + "</p>" +
         '<div class="site-footer__meta">' +
           '<span class="site-footer__made">© ' + new Date().getFullYear() + " Madeline Heller</span>" +
-          '<nav class="site-footer__social" aria-label="Social">' + social + "</nav>" +
+          '<nav class="site-footer__social" aria-label="Contact and links">' + social + "</nav>" +
         "</div>" +
       "</div>";
     mount.replaceWith(footer);
