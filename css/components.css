@@ -98,7 +98,7 @@
 }
 .site-nav__toggle svg { width: 26px; height: 26px; stroke: currentColor; }
 
-@media (max-width: 1080px) {
+@media (max-width: 1360px) {   /* eight links need ~1300px; collapse to the menu button below that */
   .site-nav__toggle { display: inline-flex; }
   .site-nav__links {
     position: fixed;

@@ -18,7 +18,8 @@
     { label: "Dissertation",                 href: "dissertation.html" },
     { label: "Migration Portfolio",          href: "migration-portfolio.html" },
     { label: "The Inheritance of Post-Maoism", href: "post-maoism.html" },
-    { label: "Hallockville",                 href: "hallockville.html" }
+    { label: "Hallockville",                 href: "hallockville.html" },
+    { label: "Venice Biennale",              href: "venice-biennale.html" }
   ];
 
   var CONTACT = {

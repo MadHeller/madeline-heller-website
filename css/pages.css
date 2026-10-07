@@ -82,15 +82,25 @@
 .project-list--bullets { margin-top: var(--sp-2); padding-left: var(--sp-3); }
 .project-list--bullets li { list-style: disc; margin-bottom: var(--sp-1); }
 
-/* Home: "Select Works" — thumbnails + oversized lilac index */
+/* Home: "Select Works" — larger image tiles, each with its title underneath.
+   Only the image is a link; the title is plain text. */
 .works {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: var(--sp-2);
-  margin-bottom: var(--sp-5);
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--sp-5) var(--sp-4);
+  margin-bottom: var(--sp-2);
 }
-@media (max-width: 720px) { .works { grid-template-columns: repeat(2, 1fr); } }
-.works .placeholder { aspect-ratio: 3 / 4; }
+@media (max-width: 1000px) { .works { grid-template-columns: repeat(2, 1fr); gap: var(--sp-4) var(--sp-3); } }
+@media (max-width: 520px)  { .works { gap: var(--sp-4) var(--sp-2); } }
+/* Small hint under the "Select Works" heading */
+.works-hint {
+  margin: calc(var(--sp-2) * -1) 0 var(--sp-4);
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: var(--fs-small);
+  opacity: 0.8;
+}
+.work { margin: 0; min-width: 0; }
 .works img {
   display: block;
   width: 100%;
@@ -99,24 +109,24 @@
   object-position: center;
   border-radius: var(--radius);
 }
+/* A wide slide shown whole (not cropped) on black, like the page behind it */
+.work--slide img { object-fit: contain; background: var(--c-black); }
 .work-thumb {
   display: block;
   transition: opacity var(--transition), transform var(--transition);
 }
 .work-thumb:hover { opacity: 0.85; transform: translateY(-3px); }
-.work-index li {
+.work__title {
+  margin-top: var(--sp-2);
   font-family: var(--font-sans);
   font-weight: 800;
   text-transform: uppercase;
-  font-size: clamp(1.5rem, 4vw, 3rem);
-  line-height: 1.1;
+  letter-spacing: 0.02em;
+  font-size: clamp(0.8rem, 0.5rem + 0.7vw, 1.1rem);
+  line-height: 1.2;
   color: var(--c-lilac);
-  opacity: 0.85;
-  transition: opacity var(--transition), transform var(--transition);
+  overflow-wrap: anywhere;
 }
-.work-index li a { display: block; }
-.work-index li:hover { opacity: 1; transform: translateX(10px); }
-.work-index li::before { content: "· "; }
 
 /* Home: "About" — portrait + bio on the dark page */
 .about { align-items: start; }
@@ -133,7 +143,7 @@
   font-family: var(--font-display);
   font-size: var(--fs-d2);
   text-align: center;
-  margin-bottom: var(--sp-4);
+  margin-bottom: var(--sp-5);   /* sits above both the photo and the text */
 }
 .about__body p {
   font-family: var(--font-serif);
@@ -142,11 +152,6 @@
   margin-bottom: var(--sp-4);
 }
 .about__latest { margin-top: var(--sp-5); }
-/* Desktop: drop the photo so its top lines up with the first paragraph,
-   i.e. just below the centered "About." heading */
-@media (min-width: 821px) {
-  .about__media { margin-top: calc(var(--fs-d2) * 1.28 + var(--sp-4)); }
-}
 
 /* =========================================================================
    INFO
@@ -220,6 +225,58 @@
 .work-card__title { font-family: var(--font-serif); font-size: var(--fs-h1); line-height: var(--lh-snug); }
 .work-card__sub { font-family: var(--font-serif); font-style: italic; font-size: var(--fs-lead); opacity: 0.9; margin: var(--sp-2) 0 var(--sp-4); max-width: 42ch; }
 .work-card__meta { text-align: left; margin-top: var(--sp-2); }
+
+/* Venice Biennale — sectioned galleries in justified rows (photos shown uncropped) */
+.jump { display: flex; flex-wrap: wrap; gap: var(--sp-1) var(--sp-3); margin-top: var(--sp-4); font-family: var(--font-serif); font-style: italic; font-size: var(--fs-lead); }
+.jump a { text-decoration: underline; text-underline-offset: 4px; text-decoration-thickness: 1px; opacity: 0.9; transition: opacity var(--transition); }
+.jump a:hover { opacity: 0.6; }
+
+.venice-section { padding-top: var(--sp-6); scroll-margin-top: var(--nav-h); }
+.venice-section__title {
+  font-family: var(--font-hero);
+  font-weight: 400;
+  font-size: clamp(1.5rem, 4.5vw, 2.7rem);
+  line-height: 0.95;
+  letter-spacing: -0.01em;
+  color: var(--c-lilac);
+  margin-bottom: var(--sp-5);
+  overflow-wrap: anywhere;
+}
+.g-group { margin-bottom: var(--sp-6); }
+.g-group__title { margin-bottom: var(--sp-3); }
+.g-grid {
+  --row-h: clamp(120px, 20vw, 240px);
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-1);
+}
+.g-grid::after { content: ""; flex-grow: 1000000; }   /* keeps a short last row from stretching */
+.g-item {
+  flex: calc(var(--ar) * 100) 1 calc(var(--ar) * var(--row-h));
+  min-width: 0;
+  margin: 0;
+}
+.g-item img, .g-item video {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius);
+  background: var(--c-near-black);
+}
+.g-link { display: block; transition: opacity var(--transition); }
+.g-link:hover { opacity: 0.85; }
+.g-item .caption { margin-top: var(--sp-1); font-size: 0.8rem; }
+
+/* Lightbox (photo viewer) */
+.lightbox { border: 0; padding: 0; background: transparent; max-width: 100vw; max-height: 100vh; width: 100vw; height: 100vh; }
+.lightbox::backdrop { background: rgba(0, 0, 0, 0.92); }
+.lightbox__stage { position: fixed; inset: 0; display: flex; align-items: center; justify-content: center; padding: var(--sp-5) var(--sp-3) var(--sp-6); }
+.lightbox__img { max-width: 100%; max-height: 100%; width: auto; height: auto; object-fit: contain; border-radius: var(--radius); }
+.lightbox__bar { position: fixed; left: 0; right: 0; bottom: 0; display: flex; justify-content: space-between; align-items: center; gap: var(--sp-2); padding: var(--sp-2) var(--sp-3); color: var(--c-white); font-family: var(--font-serif); font-style: italic; }
+.lightbox__btn { color: var(--c-white); width: 48px; height: 48px; display: inline-flex; align-items: center; justify-content: center; font-size: 1.6rem; line-height: 1; border-radius: 50%; background: rgba(255,255,255,0.12); transition: background var(--transition); }
+.lightbox__btn:hover { background: rgba(255,255,255,0.25); }
+.lightbox__close { position: fixed; top: var(--sp-2); right: var(--sp-2); }
+.lightbox__nav { display: flex; gap: var(--sp-1); }
 
 /* Hallockville — stacked presentation slides */
 .slide-deck { display: flex; flex-direction: column; gap: var(--sp-4); max-width: 1080px; margin-inline: auto; }

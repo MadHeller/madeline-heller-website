@@ -5,17 +5,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="robots" content="noindex, nofollow">
   <title>Madeline Heller — Portfolio</title>
-  <meta name="description" content="Portfolio of Madeline Heller, art historian, writer, and emerging curator based in New York and London.">
+  <meta name="description" content="Portfolio of Madeline Heller, art historian, writer, and independent curator based in New York and London.">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Asset&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@400;500;600;800&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="css/tokens.css">
-  <link rel="stylesheet" href="css/base.css">
-  <link rel="stylesheet" href="css/components.css">
-  <link rel="stylesheet" href="css/pages.css">
-  <script src="js/site.js" defer></script>
+  <link rel="stylesheet" href="css/tokens.css?v=20261007d">
+  <link rel="stylesheet" href="css/base.css?v=20261007d">
+  <link rel="stylesheet" href="css/components.css?v=20261007d">
+  <link rel="stylesheet" href="css/pages.css?v=20261007d">
+  <script src="js/site.js?v=20261007d" defer></script>
 </head>
 <body class="theme-home">
   <div data-nav></div>
@@ -30,8 +30,9 @@
         <div class="hero__grid">
           <div class="hero__bio">
             <p>
-              Madeline Heller is an art historian, writer, and emerging curator based in
-              New York. She holds an MA from The Courtauld Institute of Art and has worked
+              Madeline Heller is an art historian, writer, and independent curator based in
+              New York, with experience in curatorial research and collections. She holds
+              an MA from The Courtauld Institute of Art and has worked
               at Christie&rsquo;s, London, where she developed her understanding of how art
               acquires value, moves through institutions, and enters the historical record.
               She is currently an associate for a private estate sales and liquidation
@@ -39,12 +40,12 @@
               publication based in New York.
             </p>
             <p class="hero__name">Madeline Heller</p>
-            <p class="hero__role">Art Historian, Writer &amp; Emerging Curator</p>
+            <p class="hero__role">Art Historian, Writer &amp; Independent Curator</p>
             <a class="btn" href="info.html">Learn More About Madeline Here!</a>
           </div>
 
           <div class="hero__portrait">
-            <img src="assets/images/madeline-portrait.jpg" alt="Madeline Heller standing on a cobblestone mews street in London, in a white top and navy striped trousers.">
+            <img src="assets/images/madeline-home-portrait.jpg" alt="Portrait of Madeline Heller wearing large wire-framed glasses and a mustard-yellow textured sleeveless top, against a pale grey wall in warm light.">
           </div>
         </div>
       </div>
@@ -54,28 +55,41 @@
     <section class="section">
       <div class="container">
         <h2 class="eyebrow">Select Works</h2>
+        <p class="works-hint">Click an image to explore the project.</p>
 
         <div class="works">
-          <a class="work-thumb" href="virtual-exhibition.html"><img src="assets/images/virtual-exhibition-poster.jpg" alt="Diagnosing the Institution: the virtual exhibition poster."></a>
-          <a class="work-thumb" href="dissertation.html"><img src="assets/images/dissertation-fig1-patience.jpg" alt="Dissertation: a performance still from Yingmei Duan&rsquo;s Patience."></a>
-          <a class="work-thumb" href="migration-portfolio.html"><img src="assets/images/migration-cover.jpg" alt="Migrations dossier and portfolio cover card."></a>
-          <a class="work-thumb" href="post-maoism.html"><img src="assets/images/post-maoism-cover.jpg" alt="The Inheritance of Post-Maoism: a Zhang Xiaogang Bloodline family portrait."></a>
-          <a class="work-thumb" href="hallockville.html"><img src="assets/images/hallockville-1.jpg" alt="Hallockville Museum Farm internship presentation."></a>
+          <figure class="work">
+            <a class="work-thumb" href="virtual-exhibition.html"><img src="assets/images/virtual-exhibition-poster.jpg?v=2" alt="Diagnosing the Institution: the virtual exhibition poster." loading="lazy" decoding="async"></a>
+            <figcaption class="work__title">Virtual Exhibition Project 26&rsquo;</figcaption>
+          </figure>
+          <figure class="work">
+            <a class="work-thumb" href="dissertation.html"><img src="assets/images/dissertation-fig1-patience.jpg" alt="Dissertation: a performance still from Yingmei Duan&rsquo;s Patience." loading="lazy" decoding="async"></a>
+            <figcaption class="work__title">Dissertation &ndash; Altered Perceptions of Sleep</figcaption>
+          </figure>
+          <figure class="work">
+            <a class="work-thumb" href="migration-portfolio.html"><img src="assets/images/migration-cover.jpg" alt="Migrations dossier and portfolio cover card." loading="lazy" decoding="async"></a>
+            <figcaption class="work__title">Migrations Dossier &amp; Portfolio</figcaption>
+          </figure>
+          <figure class="work">
+            <a class="work-thumb" href="post-maoism.html"><img src="assets/images/post-maoism-cover.jpg" alt="The Inheritance of Post-Maoism: a Zhang Xiaogang Bloodline family portrait." loading="lazy" decoding="async"></a>
+            <figcaption class="work__title">The Inheritance of Post-Maoism</figcaption>
+          </figure>
+          <figure class="work work--slide">
+            <a class="work-thumb" href="hallockville.html"><img src="assets/images/hallockville-1.jpg" alt="Hallockville Museum Farm internship presentation." loading="lazy" decoding="async"></a>
+            <figcaption class="work__title">Hallockville Museum Farm Portfolio</figcaption>
+          </figure>
+          <figure class="work">
+            <a class="work-thumb" href="venice-biennale.html"><img src="assets/images/venice/venice-cover.jpg" alt="Venice Biennale, In Minor Keys: the exhibition banner on a brick wall seen through ivy leaves." loading="lazy" decoding="async"></a>
+            <figcaption class="work__title">Venice Biennale &ndash; In Minor Keys</figcaption>
+          </figure>
         </div>
-
-        <ul class="work-index">
-          <li><a href="virtual-exhibition.html">Virtual Exhibition Project 26&rsquo;</a></li>
-          <li><a href="dissertation.html">Dissertation &ndash; Altered States of Perception</a></li>
-          <li><a href="migration-portfolio.html">Migrations Dossier &amp; Portfolio</a></li>
-          <li><a href="post-maoism.html">The Inheritance of Post-Maoism</a></li>
-          <li><a href="hallockville.html">Hallockville Museum Farm Portfolio</a></li>
-        </ul>
       </div>
     </section>
 
     <!-- ================= ABOUT ================= -->
     <section class="section">
       <div class="container">
+        <h2 class="about__title">About.</h2>
         <div class="grid-2 about">
           <div class="about__media">
             <img src="assets/images/about-gallery.jpg" alt="A visitor seen from behind viewing a framed 19th-century painting of a seated jester dressed in red, hung on a deep green gallery wall.">
@@ -94,7 +108,6 @@
             </div>
           </div>
           <div class="about__body prose">
-            <h2 class="about__title">About.</h2>
             <p>
               Madeline Heller works at the intersection of art history, curatorial
               practice, and the art market. She holds an MA from The Courtauld Institute
