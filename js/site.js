@@ -24,14 +24,15 @@
 
   var CONTACT = {
     email: "Madeline-Heller@outlook.com",
-    phone: "+1 (631) 559 - 9364  /  +44 7312 134728",
+    phone: "+1 (631) 559 - 9364",
     location: "New York & London"
   };
 
   var SOCIAL = [
     { label: "Instagram", href: "https://www.instagram.com/maddy_heller_/?hl=en" },
     { label: "Email",     href: "mailto:Madeline-Heller@outlook.com" },
-    { label: "LinkedIn",  href: "https://www.linkedin.com/in/madeline-heller-95a119304" }
+    { label: "LinkedIn",  href: "https://www.linkedin.com/in/madeline-heller-95a119304" },
+    { label: "Inquiries", href: "index.html#inquiries" }
   ];
 
   /* ---- Helpers ---------------------------------------------------------- */
