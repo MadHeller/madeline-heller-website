@@ -41,7 +41,7 @@
 .hero__portrait {
   align-self: start;
   z-index: 1;
-  margin-top: calc(var(--fs-hero) * -0.42);  /* only the portrait rises into the word */
+  margin-top: 0;  /* level with the top of the bio, just below the title */
 }
 .hero__portrait .placeholder { aspect-ratio: 4 / 5; }
 /* Portrait photo fills the 4:5 spot */
