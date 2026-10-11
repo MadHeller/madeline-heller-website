@@ -40,6 +40,19 @@
     });
   });
 
+  // "Looking for something similar?" buttons on sold works.
+  var similarButtons = document.querySelectorAll("a[data-similar]");
+  Array.prototype.forEach.call(similarButtons, function (a) {
+    a.addEventListener("click", function () {
+      if (form.elements["work_or_artist"]) form.elements["work_or_artist"].value = "Something similar to " + a.getAttribute("data-similar");
+      if (form.elements["inquiry_type"]) form.elements["inquiry_type"].value = "A work I am looking for";
+      setTimeout(function () {
+        var msg = form.elements["message"];
+        if (msg) msg.focus({ preventScroll: true });
+      }, 400);
+    });
+  });
+
   // Links like "get in touch below" (for artists) pre-select an option in "I am interested in".
   var typeLinks = document.querySelectorAll("a[data-inquiry-type]");
   Array.prototype.forEach.call(typeLinks, function (a) {

@@ -22,7 +22,7 @@
       { label: "Critical Debates Portfolio on Migration",          href: "migration-portfolio.html" },
       { label: "Research Paper: The Inheritance of Post-Maoism", href: "post-maoism.html" },
       { label: "Hallockville Internship",                 href: "hallockville.html" },
-      { label: "Venice Biennale 2026",              href: "venice-biennale.html" },
+      { label: "Venice Biennale 2026: In Minor Keys",              href: "venice-biennale.html" },
       { label: "Virtual Exhibition Portfolio",           href: "virtual-exhibition.html" }
     ] }
   ];

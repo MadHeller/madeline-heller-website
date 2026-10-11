@@ -10,13 +10,13 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Asset&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@400;500;600;800&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="css/tokens.css?v=20261011x">
-  <link rel="stylesheet" href="css/base.css?v=20261011x">
-  <link rel="stylesheet" href="css/components.css?v=20261011x">
-  <link rel="stylesheet" href="css/pages.css?v=20261011x">
-  <script src="js/site.js?v=20261011x" defer></script>
-  <script src="js/contact.js?v=20261011x" defer></script>
-  <script src="js/gallery.js?v=20261011x" defer></script>
+  <link rel="stylesheet" href="css/tokens.css?v=20261012c">
+  <link rel="stylesheet" href="css/base.css?v=20261012c">
+  <link rel="stylesheet" href="css/components.css?v=20261012c">
+  <link rel="stylesheet" href="css/pages.css?v=20261012c">
+  <script src="js/site.js?v=20261012c" defer></script>
+  <script src="js/contact.js?v=20261012c" defer></script>
+  <script src="js/gallery.js?v=20261012c" defer></script>
 </head>
 <body class="theme-project">
   <div data-nav></div>
@@ -42,6 +42,7 @@
         </div>
         <nav class="jump" aria-label="Jump to a section">
           <a href="#available">Available works</a>
+          <a href="#sold">Previously sold</a>
           <a href="#inquire">Inquire</a>
         </nav>
       </div>
@@ -75,6 +76,54 @@
               <p class="acq-work__status acq-work__status--available">Available</p>
               <p class="acq-work__price">Price on request</p>
               <a class="btn acq-work__inquire" href="#inquire" data-work="Ken Orton, Attention">Inquire about this work</a>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= PREVIOUSLY SOLD =================
+         Same card as above, with the --sold status, no price, and a "similar" button. -->
+    <section class="section--tight acq-section" id="sold">
+      <div class="container">
+        <h2 class="about__title">Previously Sold</h2>
+        <p class="inquiries__intro">A selection of works that have found new homes, to give a sense of my eye and what I collect.
+          If one of these speaks to you, I&rsquo;m happy to look for something similar.</p>
+
+        <div class="acq-grid">
+
+          <article class="acq-work">
+            <div class="acq-work__image">
+              <a class="g-link" href="assets/images/acquisitions/kawano-kaoru-yellow-canary.jpg" data-caption="Kawano Kaoru, Yellow Canary (sold)">
+                <img src="assets/images/acquisitions/kawano-kaoru-yellow-canary.jpg" width="1200" height="1200" loading="lazy" decoding="async" alt="Yellow Canary, a Japanese woodblock print by Kawano Kaoru: a long-haired woman in profile against a black background looks down at a small yellow bird perched on her shoulder; shown in a cream mat and a wavy black frame.">
+              </a>
+            </div>
+            <div class="acq-work__info">
+              <p class="acq-work__artist">Kawano Kaoru</p>
+              <h3 class="acq-work__title"><em>Yellow Canary</em></h3>
+              <p class="acq-work__meta">Japanese shin hanga color woodblock print<br>Image approx. 4 3/8 &times; 6 3/8 in.<br>Signed with the artist&rsquo;s seal</p>
+              <p class="acq-work__status acq-work__status--sold">Sold</p>
+              <a class="btn btn--outline acq-work__inquire" href="#inquire" data-similar="Kawano Kaoru, Yellow Canary">Looking for something similar?</a>
+            </div>
+          </article>
+
+          <article class="acq-work">
+            <div class="acq-work__image">
+              <a class="g-link" href="assets/images/acquisitions/ancestor-portrait-gold.jpg" data-caption="J. Trowell, Seated ancestor portrait (sold)">
+                <img src="assets/images/acquisitions/ancestor-portrait-gold.jpg" width="1200" height="1200" loading="lazy" decoding="async" alt="A large framed portrait of a seated East Asian official or ancestor figure with a white beard, wearing a gold-trimmed hat and dark robes, holding a string of beads, seated on a chair draped in blue and red against a gold leaf background, in a distressed black frame.">
+              </a>
+              <a class="g-link acq-work__back" href="assets/images/acquisitions/trowell-signature.jpg" data-caption="J. Trowell, Seated ancestor portrait (signature detail)">
+                <img src="assets/images/acquisitions/trowell-signature-t.jpg" width="270" height="360" loading="lazy" decoding="async" alt="Close-up of the painted signature &lsquo;J. Trowell&rsquo; with a two-digit date, in black paint beneath the blue drapery near the base of the chair.">
+                <span>View the signature</span>
+              </a>
+            </div>
+            <div class="acq-work__info">
+              <p class="acq-work__artist">J. Trowell</p>
+              <h3 class="acq-work__title">Seated ancestor portrait</h3>
+              <p class="acq-work__meta">Paint and gold leaf on canvas<br>Approx. 46 &times; 37 in.<br>Signed and dated &ldquo;J. Trowell 78&rdquo; near the figure&rsquo;s foot<br>In the manner of 19th-century Late Qing dynasty ancestor portraits</p>
+              <p class="acq-work__status acq-work__status--sold">Sold</p>
+              <a class="btn btn--outline acq-work__inquire" href="#inquire" data-similar="J. Trowell, seated ancestor portrait on gold leaf">Looking for something similar?</a>
             </div>
           </article>
 
