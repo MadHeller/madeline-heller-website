@@ -36,7 +36,21 @@
   color: var(--nav-fg);
   transition: background var(--transition);
 }
-.site-nav.is-scrolled { background: var(--nav-scrolled-bg); backdrop-filter: blur(6px); }
+/* The scrolled bar's tint + blur sit on a separate layer: a blur on the nav itself
+   would trap the fixed side menu inside the bar (squashed menu, sideways scroll). */
+.site-nav::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: var(--nav-scrolled-bg);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  opacity: 0;
+  transition: opacity var(--transition);
+  pointer-events: none;
+}
+.site-nav.is-scrolled::before { opacity: 1; }
 
 .site-nav__inner {
   max-width: var(--container-wide);
@@ -88,6 +102,36 @@
   opacity: 1;
 }
 
+/* Drop-down group (Portfolio) */
+.site-nav__group { position: relative; }
+.site-nav__group-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3em;
+}
+.site-nav__chevron {
+  width: 0.85em; height: 0.85em;
+  transition: transform var(--transition);
+}
+.site-nav__group.is-open .site-nav__chevron { transform: rotate(180deg); }
+.site-nav__sub {
+  display: none;
+  position: absolute;
+  top: calc(100% + 0.6rem);
+  right: -1.1rem;   /* Portfolio is the last item, so open toward the left */
+  min-width: 17rem;
+  max-width: 21rem;
+  flex-direction: column;
+  gap: 0.15rem;
+  padding: 0.7rem 1.1rem;
+  background: var(--c-near-black);
+  color: var(--c-white);
+  border-radius: var(--radius);
+  box-shadow: 0 12px 32px rgba(0,0,0,0.45);
+}
+.site-nav__group.is-open .site-nav__sub { display: flex; }
+.site-nav__sublink { white-space: normal; }
+
 /* Hamburger (mobile) */
 .site-nav__toggle {
   display: none;
@@ -98,7 +142,7 @@
 }
 .site-nav__toggle svg { width: 26px; height: 26px; stroke: currentColor; }
 
-@media (max-width: 1360px) {   /* eight links need ~1300px; collapse to the menu button below that */
+@media (max-width: 1360px) {   /* collapse to the menu button below this width */
   .site-nav__toggle { display: inline-flex; }
   .site-nav__links {
     position: fixed;
@@ -114,6 +158,19 @@
     transform: translateX(100%);
     transition: transform 260ms ease;
     box-shadow: -12px 0 40px rgba(0,0,0,0.4);
+    overflow-y: auto;
+  }
+  /* In the side menu the Portfolio pages open underneath, indented */
+  .site-nav__sub {
+    position: static;
+    min-width: 0;
+    margin-top: var(--sp-1);
+    padding: 0 0 0 var(--sp-3);
+    border-left: 1px solid rgba(243, 242, 240, 0.25);
+    background: none;
+    box-shadow: none;
+    font-size: 1.05rem;
+    gap: var(--sp-1);
   }
   .site-nav__links.is-open { transform: translateX(0); }
   body.nav-open { overflow: hidden; }

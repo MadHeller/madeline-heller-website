@@ -68,3 +68,13 @@
 
   --transition: 200ms ease;
 }
+
+/* Phones: tighten the large section spacing so pages don't have big empty gaps */
+@media (max-width: 620px) {
+  :root {
+    --sp-5: 2.25rem;
+    --sp-6: 3rem;
+    --sp-7: 3.75rem;
+    --sp-8: 5rem;
+  }
+}

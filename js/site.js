@@ -11,20 +11,25 @@
   "use strict";
 
   /* ---- Site config ------------------------------------------------------ */
+  /* A link with `children` becomes a drop-down (e.g. Portfolio). */
   var NAV_LINKS = [
     { label: "Home",                         href: "index.html" },
-    { label: "Info",                         href: "info.html" },
-    { label: "Virtual Exhibition",           href: "virtual-exhibition.html" },
-    { label: "Dissertation",                 href: "dissertation.html" },
-    { label: "Migration Portfolio",          href: "migration-portfolio.html" },
-    { label: "The Inheritance of Post-Maoism", href: "post-maoism.html" },
-    { label: "Hallockville",                 href: "hallockville.html" },
-    { label: "Venice Biennale",              href: "venice-biennale.html" }
+    { label: "About",                        href: "info.html" },
+    { label: "Acquisitions",                 href: "acquisitions.html" },
+    { label: "Portfolio", children: [
+      { label: "Social Media Work for Toasty Gold Inc.", href: "social-media-toasty-gold.html" },
+      { label: "Dissertation",                 href: "dissertation.html" },
+      { label: "Critical Debates Portfolio on Migration",          href: "migration-portfolio.html" },
+      { label: "Research Paper: The Inheritance of Post-Maoism", href: "post-maoism.html" },
+      { label: "Hallockville Internship",                 href: "hallockville.html" },
+      { label: "Venice Biennale 2026",              href: "venice-biennale.html" },
+      { label: "Virtual Exhibition Portfolio",           href: "virtual-exhibition.html" }
+    ] }
   ];
 
   var CONTACT = {
     email: "Madeline-Heller@outlook.com",
-    phone: "+1 (631) 559 - 9364",
+    phone: "",   /* left blank on purpose: kept off the footer (still on the About page). To show it again: "+1 (631) 559 - 9364" */
     location: "New York & London"
   };
 
@@ -33,7 +38,9 @@
     { label: "Email",     href: "mailto:Madeline-Heller@outlook.com" },
     { label: "LinkedIn",  href: "https://www.linkedin.com/in/madeline-heller-95a119304" },
     { label: "Inquiries", href: "index.html#inquiries" },
-    { label: "Acquisitions", href: "acquisitions.html" }
+    { label: "Acquisitions", href: "acquisitions.html" },
+    { label: "Flesch on Instagram", href: "https://www.instagram.com/flesch_inc/" },
+    { label: "Flesch on Threads", href: "https://www.threads.net/@flesch_inc" }
   ];
 
   /* ---- Helpers ---------------------------------------------------------- */
@@ -53,10 +60,25 @@
   function buildNav(mount) {
     var page = currentPage();
 
-    var links = NAV_LINKS.map(function (l) {
+    function linkHtml(l, extraClass) {
       var active = l.href === page ? " is-active" : "";
       var aria = active ? ' aria-current="page"' : "";
-      return '<a class="site-nav__link' + active + '" href="' + l.href + '"' + aria + '>' + l.label + "</a>";
+      return '<a class="site-nav__link' + (extraClass || "") + active + '" href="' + l.href + '"' + aria + '>' + l.label + "</a>";
+    }
+
+    var links = NAV_LINKS.map(function (l, i) {
+      if (!l.children) return linkHtml(l);
+      var inGroup = l.children.some(function (c) { return c.href === page; });
+      var id = "nav-group-" + i;
+      return '<div class="site-nav__group' + (inGroup ? " is-current" : "") + '">' +
+          '<button class="site-nav__link site-nav__group-toggle' + (inGroup ? " is-active" : "") + '" type="button" aria-expanded="false" aria-controls="' + id + '">' +
+            l.label +
+            '<svg class="site-nav__chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>' +
+          "</button>" +
+          '<div class="site-nav__sub" id="' + id + '">' +
+            l.children.map(function (c) { return linkHtml(c, " site-nav__sublink"); }).join("") +
+          "</div>" +
+        "</div>";
     }).join("");
 
     var nav = el("nav", { class: "site-nav", "aria-label": "Primary" });
@@ -86,9 +108,40 @@
       toggle.setAttribute("aria-expanded", String(open));
       toggle.setAttribute("aria-label", open ? "Close menu" : "Open menu");
     }
-    toggle.addEventListener("click", function () { setOpen(!panel.classList.contains("is-open")); });
+    toggle.addEventListener("click", function () {
+      var open = !panel.classList.contains("is-open");
+      /* In the side menu, show the Portfolio pages already expanded when you're on one */
+      if (open) groups.forEach(function (g) { setGroupOpen(g, g.classList.contains("is-current")); });
+      setOpen(open);
+    });
     backdrop.addEventListener("click", function () { setOpen(false); });
-    document.addEventListener("keydown", function (e) { if (e.key === "Escape") setOpen(false); });
+
+    /* Drop-down groups (Portfolio) */
+    var groups = Array.prototype.slice.call(nav.querySelectorAll(".site-nav__group"));
+    function setGroupOpen(g, open) {
+      g.classList.toggle("is-open", open);
+      g.querySelector(".site-nav__group-toggle").setAttribute("aria-expanded", String(open));
+    }
+    groups.forEach(function (g) {
+      g.querySelector(".site-nav__group-toggle").addEventListener("click", function () {
+        setGroupOpen(g, !g.classList.contains("is-open"));
+      });
+    });
+    document.addEventListener("click", function (e) {
+      if (panel.classList.contains("is-open")) return;   /* side menu: leave groups as the visitor set them */
+      groups.forEach(function (g) { if (!g.contains(e.target)) setGroupOpen(g, false); });
+    });
+
+    document.addEventListener("keydown", function (e) {
+      if (e.key !== "Escape") return;
+      var openGroup = groups.filter(function (g) { return g.classList.contains("is-open"); })[0];
+      if (openGroup && !panel.classList.contains("is-open")) {
+        setGroupOpen(openGroup, false);
+        openGroup.querySelector(".site-nav__group-toggle").focus();
+      } else {
+        setOpen(false);
+      }
+    });
 
     /* Scrolled state */
     function onScroll() { nav.classList.toggle("is-scrolled", window.scrollY > 24); }
@@ -108,7 +161,7 @@
       '<div class="container">' +
         '<p class="site-footer__name">Madeline Heller</p>' +
         '<p class="site-footer__row"><a class="link" href="mailto:' + CONTACT.email + '">' + CONTACT.email + "</a></p>" +
-        '<p class="site-footer__row">' + CONTACT.phone + "</p>" +
+        (CONTACT.phone ? '<p class="site-footer__row">' + CONTACT.phone + "</p>" : "") +
         '<p class="site-footer__row">' + CONTACT.location + "</p>" +
         '<div class="site-footer__meta">' +
           '<span class="site-footer__made">© ' + new Date().getFullYear() + " Madeline Heller</span>" +

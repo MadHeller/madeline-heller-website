@@ -15,6 +15,8 @@
   var status = form.querySelector(".inquiry__status");
   var button = form.querySelector('button[type="submit"]');
   var buttonLabel = button.textContent;
+  var subjectField = form.querySelector('input[name="_subject"]');
+  var defaultSubject = subjectField ? subjectField.value : "";
 
   // Only fixed text goes through innerHTML here (nothing typed by visitors).
   var EMAIL_LINK = '<a class="link" href="mailto:' + EMAIL + '">' + EMAIL + "</a>";
@@ -38,7 +40,36 @@
     });
   });
 
+  // Links like "get in touch below" (for artists) pre-select an option in "I am interested in".
+  var typeLinks = document.querySelectorAll("a[data-inquiry-type]");
+  Array.prototype.forEach.call(typeLinks, function (a) {
+    a.addEventListener("click", function () {
+      var select = form.elements["inquiry_type"];
+      if (select) select.value = a.getAttribute("data-inquiry-type");
+      setTimeout(function () {
+        var name = form.elements["name"];
+        if (name) name.focus({ preventScroll: true });
+      }, 400);
+    });
+  });
+
+  // A link like index.html?inquiry=dissertation#inquiries pre-selects the matching option.
+  var wanted = new URLSearchParams(window.location.search).get("inquiry");
+  if (wanted && form.elements["inquiry_type"]) {
+    var match = form.querySelector('option[data-key="' + wanted.replace(/[^a-z-]/g, "") + '"]');
+    if (match) match.selected = true;
+  }
+
+  // Some options (e.g. artists) send the email with their own subject line so they're easy to spot.
+  function updateSubject() {
+    var select = form.elements["inquiry_type"];
+    if (!subjectField || !select) return;
+    var opt = select.options[select.selectedIndex];
+    subjectField.value = (opt && opt.getAttribute("data-subject")) || defaultSubject;
+  }
+
   form.addEventListener("submit", function (e) {
+    updateSubject();
     e.preventDefault();
 
     // Spam trap: real visitors never see or fill this field.

@@ -3,7 +3,6 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="robots" content="noindex, nofollow">
   <title>Madeline Heller — Portfolio</title>
   <meta name="description" content="Portfolio of Madeline Heller, art historian, writer, and independent curator based in New York and London.">
 
@@ -11,12 +10,12 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Asset&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@400;500;600;800&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="css/tokens.css?v=20261007m">
-  <link rel="stylesheet" href="css/base.css?v=20261007m">
-  <link rel="stylesheet" href="css/components.css?v=20261007m">
-  <link rel="stylesheet" href="css/pages.css?v=20261007m">
-  <script src="js/site.js?v=20261007m" defer></script>
-  <script src="js/contact.js?v=20261007m" defer></script>
+  <link rel="stylesheet" href="css/tokens.css?v=20261011x">
+  <link rel="stylesheet" href="css/base.css?v=20261011x">
+  <link rel="stylesheet" href="css/components.css?v=20261011x">
+  <link rel="stylesheet" href="css/pages.css?v=20261011x">
+  <script src="js/site.js?v=20261011x" defer></script>
+  <script src="js/contact.js?v=20261011x" defer></script>
 </head>
 <body class="theme-home">
   <div data-nav></div>
@@ -79,8 +78,8 @@
             <a class="work-thumb" href="post-maoism.html"><img src="assets/images/post-maoism-cover.jpg" alt="The Inheritance of Post-Maoism: a Zhang Xiaogang Bloodline family portrait." loading="lazy" decoding="async"></a>
             <figcaption class="work__title">The Inheritance of Post-Maoism</figcaption>
           </figure>
-          <figure class="work work--slide">
-            <a class="work-thumb" href="hallockville.html"><img src="assets/images/hallockville-1.jpg" alt="Hallockville Museum Farm internship presentation." loading="lazy" decoding="async"></a>
+          <figure class="work">
+            <a class="work-thumb" href="hallockville.html"><img src="assets/images/hallockville-cover.jpg" alt="Hallockville Museum Farm internship: two cows at a fence in a green pasture under a rainbow." loading="lazy" decoding="async"></a>
             <figcaption class="work__title">Hallockville Museum Farm Portfolio</figcaption>
           </figure>
           <figure class="work">
@@ -103,12 +102,12 @@
               <ul class="project-list">
                 <li>In The Flesch &ndash; Art Magazine (Coming Soon&hellip;)</li>
                 <li>Virtual Exhibition Portfolio</li>
-                <li>Toasty Gold Inc. Instagram &amp; social media presence revamp:</li>
+                <li><a class="link" href="social-media-toasty-gold.html">Toasty Gold Inc. Instagram &amp; social media presence revamp</a>:</li>
               </ul>
               <ul class="project-list project-list--bullets">
-                <li><a class="link" href="#">@toastygold.inc</a></li>
-                <li><a class="link" href="#">Auction Ninja</a></li>
-                <li><a class="link" href="#">Toasty Gold</a></li>
+                <li><a class="link" href="https://www.instagram.com/toastygold.inc/" target="_blank" rel="noopener">@toastygold.inc</a></li>
+                <li><a class="link" href="https://www.auctionninja.com/billy-reyes/" target="_blank" rel="noopener">Auction Ninja</a></li>
+                <li><a class="link" href="https://toastygold.com" target="_blank" rel="noopener">Toasty Gold</a></li>
               </ul>
             </div>
           </div>
@@ -174,13 +173,15 @@
 
           <div class="inquiry__field">
             <label for="inq-type">What is your inquiry about? <span class="inquiry__optional">(optional)</span></label>
-            <select id="inq-type" name="inquiry_type">
+            <select id="inq-type" name="inquiry_type" autocomplete="off">
               <option value="">Choose one</option>
               <option>Curatorial project</option>
               <option>Advisory work</option>
               <option>Critical writing</option>
               <option>Gallery sales</option>
               <option>Collaboration</option>
+              <option data-key="dissertation" data-subject="Dissertation request from madelineheller.com">A copy of your dissertation</option>
+              <option data-subject="Artist inquiry from madelineheller.com">I&rsquo;m an artist interested in working with you</option>
               <option>Something else</option>
             </select>
           </div>

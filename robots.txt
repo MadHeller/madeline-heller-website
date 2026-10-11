@@ -1,7 +1,7 @@
-# Keep the whole site out of search engines while it's a work in progress.
-# When you're ready to be discoverable, change to:
-#   User-agent: *
-#   Disallow:
-# and remove the <meta name="robots" content="noindex, nofollow"> tags from the HTML.
+# The site is visible to search engines (turned on 2026-10-11).
+# To hide it again: change "Disallow:" below to "Disallow: /" and add
+# <meta name="robots" content="noindex, nofollow"> back to every page's <head>.
 User-agent: *
-Disallow: /
+Disallow:
+
+Sitemap: https://madelineheller.com/sitemap.xml

@@ -168,34 +168,26 @@ Because no human reviews the output, these are hard requirements for every chang
 
 ---
 
-## 8. SEO / visibility — the site is currently HIDDEN
+## 8. SEO / visibility — the site is VISIBLE to search engines
 
-**Right now this site is deliberately kept out of Google and other search
-engines** while it's a work in progress. Two mechanisms do this:
+The owner asked to be findable on Google (October 2026), so:
 
-1. `<meta name="robots" content="noindex, nofollow">` in the `<head>` of **every**
-   HTML page.
-2. `robots.txt` at the repo root with `Disallow: /`.
+1. There is **no** `noindex` meta tag on the pages.
+2. `robots.txt` allows crawling and points to `sitemap.xml`.
+3. `sitemap.xml` lists every page with its full `https://madelineheller.com/...`
+   address (the one place absolute URLs are correct).
 
 Important consequences:
-- If you **add a new page**, add the same `noindex` meta tag to its `<head>` so
-  it stays hidden and consistent.
-- The site is still reachable by anyone who has the URL — `noindex` only stops
-  search *listing*, it is not a password/privacy wall. Do not describe it as
-  "private" to the owner; describe it as "not showing up in Google yet."
+- If you **add a new page**, add it to `sitemap.xml` and give it an accurate
+  `<title>` and `<meta name="description">`.
+- Anything on the site (phone numbers, emails, PDFs in `assets/docs/`) can show
+  up in search results. Check with the owner before adding personal details.
 
-### Turning search visibility back ON (when she's ready to launch publicly)
-When the owner says she wants the site to be findable on Google, do all of this:
-1. **Remove** the `<meta name="robots" content="noindex, nofollow">` line from
-   every HTML page.
-2. **Edit `robots.txt`** to allow crawling:
-   ```
-   User-agent: *
-   Disallow:
-   ```
-3. Consider adding a `sitemap.xml` and real `<title>`/`<meta name="description">`
-   per page (titles already exist; keep them accurate).
-4. Tell her it can take days/weeks for Google to index a new site.
+### Hiding the site from search again (only if she asks)
+1. Add `<meta name="robots" content="noindex, nofollow">` to every page's `<head>`.
+2. Change `robots.txt` to `Disallow: /`.
+3. `noindex` only stops search *listing*; it is not a privacy wall. Describe it as
+   "not showing up in Google," never as "private."
 
 ---
 
@@ -302,6 +294,6 @@ A change is done only when ALL are true:
 - [ ] Uses existing design tokens/classes; shared nav/footer untouched or updated
       in `site.js` only.
 - [ ] Responsive (phone → desktop), readable contrast, accessible markup.
-- [ ] New pages carry the `noindex` meta tag while the site is hidden.
+- [ ] New pages are added to `sitemap.xml` with an accurate title and description.
 - [ ] Previewed in a browser on desktop + mobile widths; no console errors.
 - [ ] Explained to her in one or two plain sentences.

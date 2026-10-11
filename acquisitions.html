@@ -3,21 +3,20 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="robots" content="noindex, nofollow">
   <title>Acquisitions — Madeline Heller</title>
-  <meta name="description" content="Works of art currently available for acquisition, and a way to tell Madeline Heller what you are looking for.">
+  <meta name="description" content="Works of art available for acquisition from Madeline Heller (Flesch), and a way for collectors and artists to get in touch.">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Asset&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@400;500;600;800&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="css/tokens.css?v=20261007m">
-  <link rel="stylesheet" href="css/base.css?v=20261007m">
-  <link rel="stylesheet" href="css/components.css?v=20261007m">
-  <link rel="stylesheet" href="css/pages.css?v=20261007m">
-  <script src="js/site.js?v=20261007m" defer></script>
-  <script src="js/contact.js?v=20261007m" defer></script>
-  <script src="js/gallery.js?v=20261007m" defer></script>
+  <link rel="stylesheet" href="css/tokens.css?v=20261011x">
+  <link rel="stylesheet" href="css/base.css?v=20261011x">
+  <link rel="stylesheet" href="css/components.css?v=20261011x">
+  <link rel="stylesheet" href="css/pages.css?v=20261011x">
+  <script src="js/site.js?v=20261011x" defer></script>
+  <script src="js/contact.js?v=20261011x" defer></script>
+  <script src="js/gallery.js?v=20261011x" defer></script>
 </head>
 <body class="theme-project">
   <div data-nav></div>
@@ -27,11 +26,20 @@
       <div class="container">
         <h1 class="display-sans">Acquisitions</h1>
         <p class="project-hero__subtitle">Works available for acquisition</p>
-        <p class="prose" style="font-family:var(--font-sans); max-width:62ch; margin-top: var(--sp-3);">
+        <p class="prose project-hero__intro">
           A selection of works I currently have available. Prices are available on request.
           If you are looking for a particular artist or work, or would like to see the full
           portfolio, send me a note below.
         </p>
+        <p class="prose project-hero__intro">
+          <strong>Artists:</strong> I&rsquo;m always looking to connect with new artists. If you&rsquo;d
+          like to share your work, <a class="link" href="#inquire" data-inquiry-type="I&rsquo;m an artist interested in working with you">get in touch below</a>
+          and choose &ldquo;I&rsquo;m an artist interested in working with you.&rdquo;
+        </p>
+        <div class="social-hero__links">
+          <a class="btn" href="https://www.instagram.com/flesch_inc/" target="_blank" rel="noopener">Follow @flesch_inc on Instagram</a>
+          <a class="btn btn--outline" href="https://www.threads.net/@flesch_inc" target="_blank" rel="noopener">Follow on Threads</a>
+        </div>
         <nav class="jump" aria-label="Jump to a section">
           <a href="#available">Available works</a>
           <a href="#inquire">Inquire</a>
@@ -80,7 +88,8 @@
         <h2 class="about__title">Inquire</h2>
         <p class="inquiries__intro">
           Interested in a work, searching for something specific, or would like to see the
-          full portfolio? Tell me a little about what you have in mind and I&rsquo;ll be in touch.
+          full portfolio? Are you an artist who would like to share your work? Tell me a little
+          about what you have in mind and I&rsquo;ll be in touch.
         </p>
 
         <form class="inquiry" data-endpoint="https://formspree.io/f/xyekejkr" method="post" aria-describedby="inquiry-status">
@@ -101,6 +110,7 @@
               <option>A work listed above</option>
               <option>A work I am looking for</option>
               <option>The full portfolio</option>
+              <option data-subject="Artist inquiry from madelineheller.com">I&rsquo;m an artist interested in working with you</option>
               <option>Something else</option>
             </select>
           </div>

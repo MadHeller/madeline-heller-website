@@ -77,7 +77,8 @@
 .btn--outline:hover { background: var(--c-lilac); color: #1c1922; }
 @media (max-width: 820px) {
   .hero__grid { grid-template-columns: 1fr; margin-top: var(--sp-2); }
-  .hero__portrait { margin-top: var(--sp-2); }  /* no overlap when stacked */
+  /* Phones/tablets: portrait comes first, right under the "Portfolio" title */
+  .hero__portrait { order: -1; margin-top: 0; }
   /* Asset is very wide; scale to viewport so "Portfolio" fits on one line */
   .hero__word { font-size: clamp(1.4rem, 8vw, 5rem); }
 }
@@ -256,6 +257,16 @@
   margin-bottom: var(--sp-3);
 }
 .info-contact p { margin-bottom: var(--sp-3); }
+.info-contact .link { overflow-wrap: normal; }
+.info-summary { margin: var(--sp-4) auto 0; text-align: center; font-family: var(--font-serif); max-width: 80ch; }
+@media (max-width: 620px) {
+  /* Phones: each email on its own line, never split mid-address */
+  .info-emails .link { display: block; width: fit-content; }
+  .info-emails .info-sep { display: none; }
+  .info-emails .link + .info-sep + .link { margin-top: var(--sp-1); }
+  /* long centred paragraphs are hard to read on a narrow screen */
+  .info-summary { text-align: left; }
+}
 
 /* résumé-style blocks */
 .resume-block { margin-bottom: var(--sp-5); }
@@ -290,6 +301,83 @@
   font-size: var(--fs-d2);
   margin-block: var(--sp-3) var(--sp-4);
   max-width: 22ch;
+}
+.project-hero__intro { font-family: var(--font-sans); max-width: 62ch; margin-top: var(--sp-3); }
+/* Toasty Gold page header: text with the company logo beside it */
+.social-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: var(--sp-5);
+}
+.social-hero__logo {
+  grid-column: 2;
+  grid-row: 1;
+  width: clamp(150px, 18vw, 240px);
+  height: auto;
+  clip-path: circle(49%);   /* trims the white square corners around the round badge */
+}
+.social-hero__text { grid-column: 1; grid-row: 1; }
+.social-hero__links { display: flex; flex-wrap: wrap; gap: var(--sp-2); margin-top: var(--sp-4); }
+.social-hero__links .btn { border: 1px solid var(--c-lilac); text-align: center; }
+@media (max-width: 620px) { .social-hero__links { flex-direction: column; width: max-content; max-width: 100%; } }
+@media (max-width: 760px) {
+  .social-hero { grid-template-columns: 1fr; gap: var(--sp-3); }
+  .social-hero__logo { grid-column: 1; width: 130px; }
+  .social-hero__text { grid-row: 2; }
+}
+/* Social media posts (Toasty Gold page): image beside its caption, stacked on phones */
+.social-posts { display: grid; gap: var(--sp-6); }
+.social-post {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: var(--sp-5);
+  align-items: start;
+}
+.social-post__media img { display: block; width: 100%; height: auto; border-radius: var(--radius); }
+.social-post__title { font-family: var(--font-serif); font-size: var(--fs-h2); margin-bottom: var(--sp-3); }
+.social-post__caption p { font-family: var(--font-sans); margin-bottom: var(--sp-2); max-width: 60ch; }
+.social-post__media .g-link { display: block; }
+.social-post__platform {
+  font-family: var(--font-sans);
+  font-size: var(--fs-small);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--on-dark-dim);
+  margin-bottom: var(--sp-1);
+}
+.social-post__more { font-family: var(--font-sans); font-size: var(--fs-small); color: var(--on-dark-dim); margin: var(--sp-3) 0 var(--sp-1); }
+.social-post__thumbs { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--sp-1); }
+.social-post__thumbs img { display: block; width: 100%; height: auto; border-radius: var(--radius); }
+/* Thumbnails spread in one row across the full width under the post */
+.social-post__thumbs--row { grid-template-columns: repeat(6, minmax(0, 1fr)); gap: var(--sp-2); }
+@media (max-width: 900px) { .social-post__thumbs--row { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+.social-post__thumbs--four { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: var(--sp-2); }
+@media (max-width: 620px) { .social-post__thumbs--four { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+.social-post__thumbs--square img { aspect-ratio: 1 / 1; width: 100%; height: auto; object-fit: cover; }
+/* Posts where each image had its own description: cards across the full width */
+.social-post__slides { grid-column: 1 / -1; }
+.social-slides {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--sp-4) var(--sp-3);
+}
+@media (max-width: 900px) { .social-slides { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 520px) { .social-slides { grid-template-columns: 1fr; } }
+.social-slide img { display: block; width: 100%; height: auto; border-radius: var(--radius); }
+.social-slide__title { font-family: var(--font-serif); font-size: var(--fs-h3); margin: var(--sp-2) 0 var(--sp-1); }
+.social-slide figcaption p { font-family: var(--font-sans); font-size: var(--fs-small); color: var(--on-dark-dim); }
+/* Two stand-alone posters side by side */
+.social-pair { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--sp-3); max-width: 820px; }
+.social-pair img { display: block; width: 100%; height: auto; border-radius: var(--radius); }
+@media (max-width: 520px) { .social-pair { grid-template-columns: 1fr; } }
+/* Landscape posts (e.g. stories shared wide): image full width, caption below */
+.social-post--wide { grid-template-columns: 1fr; gap: var(--sp-3); }
+/* Tall phone-shaped posts: keep the image from towering over the caption */
+.social-post--tall .social-post__media img { max-width: 400px; margin-inline: auto; }
+.social-post__tags { color: var(--c-lilac); font-size: var(--fs-small); overflow-wrap: anywhere; }
+@media (max-width: 760px) {
+  .social-post { grid-template-columns: 1fr; gap: var(--sp-3); }
 }
 .project-hero__meta { margin-top: var(--sp-4); font-family: var(--font-sans); opacity: 0.85; }
 .project-body .prose p { font-family: var(--font-sans); margin-bottom: var(--sp-3); max-width: 78ch; }
@@ -406,4 +494,8 @@
 
 /* Shared PDF call-to-action (dissertation, virtual exhibition, etc.) */
 .pdf-cta { text-align: center; margin-top: var(--sp-8); }
-.pdf-cta .caption { margin-top: var(--sp-2); }
+.pdf-cta .caption { margin: var(--sp-2) auto 0; max-width: 60ch; }
+.pdf-cta__request { margin-top: var(--sp-4); }
+/* Outlined button on the cream sections: dark text and border so it stays readable */
+.bg-light .btn--outline { color: var(--on-light); border: 1px solid var(--on-light); }
+.bg-light .btn--outline:hover { background: var(--c-lilac); border-color: var(--c-lilac); color: #1c1922; }
