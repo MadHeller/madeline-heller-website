@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Artists — Flesch | Madeline Heller</title>
+  <meta name="description" content="Flesch, the independent gallery program of Madeline Heller in New York, is looking for emerging artists. Learn what Flesch offers and submit your work.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Asset&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@400;500;600;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/tokens.css?v=20261012d">
+  <link rel="stylesheet" href="css/base.css?v=20261012d">
+  <link rel="stylesheet" href="css/components.css?v=20261012d">
+  <link rel="stylesheet" href="css/pages.css?v=20261012d">
+  <script src="js/site.js?v=20261012d" defer></script>
+  <script src="js/contact.js?v=20261012d" defer></script>
+</head>
+<body class="theme-project">
+  <div data-nav></div>
+
+  <main>
+    <section class="project-hero">
+      <div class="container">
+        <h1 class="display-sans">Artists</h1>
+        <p class="project-hero__subtitle">Work with Flesch</p>
+        <div class="flesch-about">
+          <!-- LOGO: replace this text mark with <img class="flesch-about__logo" src="assets/images/flesch-logo.png" alt="Flesch"> when the logo arrives -->
+          <p class="flesch-about__mark" aria-hidden="true">Flesch</p>
+          <div class="flesch-about__text">
+            <h2 class="flesch-about__title">About Flesch</h2>
+            <p>Flesch is an independent gallery program based in New York, founded by art historian and
+            curator Madeline Heller. It works with emerging artists and with collectors, placing works with
+            people who will live with them. <em>In The Flesch</em>, a magazine of art criticism and market
+            analysis, is coming soon.</p>
+          </div>
+        </div>
+        <nav class="jump" aria-label="Jump to a section">
+          <a href="#looking-for">What I&rsquo;m looking for</a>
+          <a href="#offer">What Flesch offers</a>
+          <a href="#submit">Submit your work</a>
+        </nav>
+      </div>
+    </section>
+
+    <section class="section--tight acq-section" id="looking-for">
+      <div class="container">
+        <h2 class="about__title">What I&rsquo;m Looking For</h2>
+        <p class="inquiries__intro">
+          Emerging and early-career artists whose work rewards a second look. All media are welcome,
+          with a particular interest in painting and works on paper.
+        </p>
+      </div>
+    </section>
+
+    <section class="section--tight acq-section" id="offer">
+      <div class="container">
+        <h2 class="about__title">What Flesch Offers</h2>
+        <p class="inquiries__intro">Depending on the work and the fit, this can include:</p>
+        <ul class="offer-list">
+          <li class="offer-list__item">
+            <h3 class="offer-list__title">Placement with collectors</h3>
+            <p>Introducing your work to collectors I know and helping place pieces with them.</p>
+          </li>
+          <li class="offer-list__item">
+            <h3 class="offer-list__title">Online features</h3>
+            <p>Featuring your work on this website and on Flesch&rsquo;s Instagram and Threads, <a class="link" href="https://www.instagram.com/flesch_inc/" target="_blank" rel="noopener">@flesch_inc</a>.</p>
+          </li>
+          <li class="offer-list__item">
+            <h3 class="offer-list__title">Exhibitions &amp; pop-ups</h3>
+            <p>Including your work in shows, pop-ups and viewing events.</p>
+          </li>
+          <li class="offer-list__item">
+            <h3 class="offer-list__title">Writing about your work</h3>
+            <p>Reviews and features in <em>In The Flesch</em>, the Flesch magazine of art criticism (coming soon).</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section inquiries" id="submit">
+      <div class="container">
+        <h2 class="about__title">Submit Your Work</h2>
+        <p class="inquiries__intro">
+          Tell me about yourself and share a link to your work. I read every submission, and if it&rsquo;s
+          a good fit I&rsquo;ll be in touch.
+        </p>
+
+        <form class="inquiry" data-endpoint="https://formspree.io/f/xyekejkr" method="post" aria-describedby="inquiry-status">
+          <div class="inquiry__row">
+            <div class="inquiry__field">
+              <label for="sub-name">Name</label>
+              <input id="sub-name" name="name" type="text" autocomplete="name" required maxlength="100">
+            </div>
+            <div class="inquiry__field">
+              <label for="sub-email">Email</label>
+              <input id="sub-email" name="email" type="email" autocomplete="email" required maxlength="150">
+            </div>
+          </div>
+
+          <div class="inquiry__row">
+            <div class="inquiry__field">
+              <label for="sub-site">Website or online portfolio</label>
+              <input id="sub-site" name="portfolio_link" type="url" required maxlength="300" placeholder="https://">
+            </div>
+            <div class="inquiry__field">
+              <label for="sub-ig">Instagram <span class="inquiry__optional">(optional)</span></label>
+              <input id="sub-ig" name="instagram" type="text" maxlength="100" placeholder="@yourname">
+            </div>
+          </div>
+
+          <div class="inquiry__row">
+            <div class="inquiry__field">
+              <label for="sub-medium">Medium(s)</label>
+              <input id="sub-medium" name="medium" type="text" required maxlength="200" placeholder="e.g. oil painting, works on paper">
+            </div>
+            <div class="inquiry__field">
+              <label for="sub-location">Where you&rsquo;re based <span class="inquiry__optional">(optional)</span></label>
+              <input id="sub-location" name="location" type="text" maxlength="100">
+            </div>
+          </div>
+
+          <div class="inquiry__field">
+            <label for="sub-message">A few words about your work</label>
+            <textarea id="sub-message" name="message" required minlength="10" maxlength="5000"></textarea>
+          </div>
+          <p class="inquiry__note">Please share links to your work rather than attachments.</p>
+
+          <!-- Spam trap: hidden from people; bots tend to fill it in -->
+          <div class="inquiry__hp" aria-hidden="true">
+            <label for="sub-website">Leave this field empty</label>
+            <input id="sub-website" name="_gotcha" type="text" tabindex="-1" autocomplete="off">
+          </div>
+          <input type="hidden" name="_subject" value="Artist submission from madelineheller.com">
+          <input type="hidden" name="form_page" value="Artists">
+
+          <div class="inquiry__actions">
+            <button class="btn" type="submit">Submit</button>
+            <p class="inquiry__status" id="inquiry-status" role="status" aria-live="polite"></p>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <div data-footer></div>
+</body>
+</html>

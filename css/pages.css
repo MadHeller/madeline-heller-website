@@ -500,3 +500,47 @@
 /* Outlined button on the cream sections: dark text and border so it stays readable */
 .bg-light .btn--outline { color: var(--on-light); border: 1px solid var(--on-light); }
 .bg-light .btn--outline:hover { background: var(--c-lilac); border-color: var(--c-lilac); color: #1c1922; }
+
+/* =========================================================================
+   FLESCH — "About Flesch" block (Artists + Acquisitions) and Artists page
+   ========================================================================= */
+.flesch-about {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: var(--sp-4);
+  align-items: center;
+  margin-top: var(--sp-5);
+  padding: var(--sp-4) 0;
+  border-top: 1px solid rgba(243, 242, 240, 0.2);
+  border-bottom: 1px solid rgba(243, 242, 240, 0.2);
+  max-width: 62rem;
+}
+.flesch-about__mark {
+  font-family: var(--font-hero);
+  color: var(--c-lilac);
+  font-size: clamp(2.2rem, 5vw, 3.6rem);
+  line-height: 1;
+  margin: 0;
+}
+.flesch-about__logo { width: clamp(120px, 14vw, 180px); height: auto; }
+.flesch-about__title { font-family: var(--font-serif); font-size: var(--fs-h3); margin-bottom: var(--sp-1); }
+.flesch-about__text p { font-family: var(--font-sans); max-width: 62ch; }
+@media (max-width: 620px) {
+  .flesch-about { grid-template-columns: 1fr; gap: var(--sp-2); }
+}
+.offer-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--sp-4);
+  max-width: 900px;
+  margin: 0 auto;
+}
+.offer-list__item {
+  padding: var(--sp-3);
+  border: 1px solid rgba(182, 172, 198, 0.4);
+  border-radius: var(--radius);
+}
+.offer-list__title { font-family: var(--font-serif); font-size: var(--fs-h3); color: var(--c-lilac); margin-bottom: var(--sp-1); }
+.offer-list__item p { font-family: var(--font-sans); }
+@media (max-width: 620px) { .offer-list { grid-template-columns: 1fr; } }
+.inquiry__note { font-family: var(--font-serif); font-style: italic; opacity: 0.8; margin: calc(var(--sp-2) * -1) 0 0; }
