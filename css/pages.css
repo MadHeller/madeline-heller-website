@@ -208,22 +208,32 @@
   /* cards are 300-400px wide and centered, so one work (or a few) sits in the middle */
   grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 400px));
   justify-content: center;
-  align-items: start;
+  align-items: stretch;   /* cards in a row share one height, so their buttons line up at the bottom */
   gap: var(--sp-6) var(--sp-4);
   margin-top: var(--sp-5);
 }
 .acq-work { display: flex; flex-direction: column; }
 .acq-work__image { border-radius: var(--radius); }
-.acq-work__image img {
+/* Every main picture sits in the same square frame so the cards line up; the whole work
+   is always shown (never cropped), on a soft light background */
+.acq-work__image > .g-link:first-child { display: block; }
+.acq-work__image > .g-link:first-child img {
   display: block;
   width: 100%;
-  height: auto;              /* shown at its natural shape: the whole work, never cropped */
+  height: auto;
+  aspect-ratio: 1 / 1;
+  object-fit: contain;
+  background: var(--c-white);
   border-radius: var(--radius);
 }
-.acq-work__image .placeholder { aspect-ratio: 4 / 5; }
-.acq-work__image .acq-work__back { display: flex; align-items: center; gap: var(--sp-2); margin-top: var(--sp-2); }
-.acq-work__back img { width: 64px; height: 64px; object-fit: cover; flex: none; }
-.acq-work__back span { font-family: var(--font-serif); font-style: italic; font-size: var(--fs-small); text-decoration: underline; text-underline-offset: 3px; }
+.acq-work__image .placeholder { aspect-ratio: 1 / 1; }
+/* Extra views (back, signature, certificate): one compact row of thumbnails; the row keeps
+   the same height on every card, so the text underneath starts at the same place */
+.acq-work__views { display: flex; align-items: center; gap: var(--sp-1); min-height: 56px; margin-top: var(--sp-2); }
+.acq-work__views-label { font-family: var(--font-serif); font-style: italic; font-size: var(--fs-small); opacity: 0.8; margin-right: var(--sp-1); }
+.acq-work__thumb { display: block; flex: none; border-radius: var(--radius); transition: opacity var(--transition); }
+.acq-work__thumb:hover { opacity: 0.75; }
+.acq-work__thumb img { width: 56px; height: 56px; object-fit: cover; border-radius: var(--radius); display: block; }
 .acq-work__info { display: flex; flex-direction: column; align-items: flex-start; padding-top: var(--sp-3); flex: 1; }
 .acq-work__artist { font-family: var(--font-sans); font-weight: 800; text-transform: uppercase; letter-spacing: 0.02em; font-size: 0.95rem; color: var(--c-lilac); margin: 0; }
 .acq-work__title { font-family: var(--font-serif); font-weight: 400; font-size: var(--fs-lead); line-height: var(--lh-snug); margin-top: var(--sp-1); }
