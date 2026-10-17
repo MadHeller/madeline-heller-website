@@ -35,13 +35,12 @@
   };
 
   var SOCIAL = [
-    { label: "Instagram", href: "https://www.instagram.com/maddy_heller_/?hl=en" },
+    { label: "Instagram", href: "https://www.instagram.com/flesch_inc/" },
+    { label: "Threads",   href: "https://www.threads.net/@flesch_inc" },
     { label: "Email",     href: "mailto:Madeline-Heller@outlook.com" },
     { label: "LinkedIn",  href: "https://www.linkedin.com/in/madeline-heller-95a119304" },
     { label: "Inquiries", href: "index.html#inquiries" },
-    { label: "Acquisitions", href: "acquisitions.html" },
-    { label: "Flesch on Instagram", href: "https://www.instagram.com/flesch_inc/" },
-    { label: "Flesch on Threads", href: "https://www.threads.net/@flesch_inc" }
+    { label: "Acquisitions", href: "acquisitions.html" }
   ];
 
   /* ---- Helpers ---------------------------------------------------------- */

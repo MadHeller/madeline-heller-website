@@ -312,5 +312,5 @@
   margin-top: var(--sp-5);
 }
 .site-footer__made { font-size: 0.8rem; opacity: 0.6; }
-.site-footer__social { display: flex; gap: var(--sp-2); }
+.site-footer__social { display: flex; flex-wrap: wrap; gap: var(--sp-1) var(--sp-2); }
 .site-footer__social a { text-decoration: underline; text-underline-offset: 3px; }
