@@ -229,8 +229,9 @@
 .acq-work__image .placeholder { aspect-ratio: 1 / 1; }
 /* Extra views (back, signature, certificate): one compact row of thumbnails; the row keeps
    the same height on every card, so the text underneath starts at the same place */
-.acq-work__views { display: flex; align-items: center; gap: var(--sp-1); min-height: 56px; margin-top: var(--sp-2); }
+.acq-work__views { display: flex; flex-wrap: wrap; align-items: center; gap: var(--sp-1); min-height: 56px; margin-top: var(--sp-2); }
 .acq-work__views-label { font-family: var(--font-serif); font-style: italic; font-size: var(--fs-small); opacity: 0.8; margin-right: var(--sp-1); }
+@media (max-width: 420px) { .acq-work__views-label { display: none; } }
 .acq-work__thumb { display: block; flex: none; border-radius: var(--radius); transition: opacity var(--transition); }
 .acq-work__thumb:hover { opacity: 0.75; }
 .acq-work__thumb img { width: 56px; height: 56px; object-fit: cover; border-radius: var(--radius); display: block; }
