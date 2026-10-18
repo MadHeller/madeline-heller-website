@@ -180,6 +180,8 @@ The owner asked to be findable on Google (October 2026), so:
 Important consequences:
 - If you **add a new page**, add it to `sitemap.xml` and give it an accurate
   `<title>` and `<meta name="description">`.
+- Every page carries the GoatCounter visitor-statistics `<script>` just before
+  `</head>` (dashboard: madelineheller.goatcounter.com). Copy it into any new page.
 - Anything on the site (phone numbers, emails, PDFs in `assets/docs/`) can show
   up in search results. Check with the owner before adding personal details.
 
