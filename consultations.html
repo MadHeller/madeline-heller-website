@@ -4,18 +4,18 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Consultations — Madeline Heller</title>
-  <meta name="description" content="Book a consultation with art historian and curator Madeline Heller: collector advice, informal art and object assessments, and career sessions for artists.">
+  <meta name="description" content="Book a consultation with art historian and curator Madeline Heller: collector advice, informal art and object assessments, career sessions for artists, and website design for artists and art businesses.">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Asset&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@400;500;600;800&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="css/tokens.css?v=20261018c">
-  <link rel="stylesheet" href="css/base.css?v=20261018c">
-  <link rel="stylesheet" href="css/components.css?v=20261018c">
-  <link rel="stylesheet" href="css/pages.css?v=20261018c">
-  <script src="js/site.js?v=20261018c" defer></script>
-  <script src="js/contact.js?v=20261018c" defer></script>
+  <link rel="stylesheet" href="css/tokens.css?v=20261018d">
+  <link rel="stylesheet" href="css/base.css?v=20261018d">
+  <link rel="stylesheet" href="css/components.css?v=20261018d">
+  <link rel="stylesheet" href="css/pages.css?v=20261018d">
+  <script src="js/site.js?v=20261018d" defer></script>
+  <script src="js/contact.js?v=20261018d" defer></script>
   <!-- Visitor statistics (GoatCounter: privacy-friendly, no cookies). Dashboard: https://madelineheller.goatcounter.com -->
   <script data-goatcounter="https://madelineheller.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
 </head>
@@ -30,12 +30,13 @@
         <p class="prose project-hero__intro">
           Drawing on my training at The Courtauld Institute of Art, my experience at Christie&rsquo;s, and my
           everyday work with estate collections, I offer focused, friendly sessions for collectors, owners of
-          inherited pieces, and artists.
+          inherited pieces, and artists. I also design websites for artists and art businesses.
         </p>
         <nav class="jump" aria-label="Jump to a section">
           <a href="#services">Sessions</a>
+          <a href="#websites">Websites</a>
           <a href="#how">How it works</a>
-          <a href="#questions">Questions before booking</a>
+          <a href="#questions">Questions &amp; quotes</a>
         </nav>
       </div>
     </section>
@@ -70,6 +71,25 @@
       </div>
     </section>
 
+    <section class="section--tight acq-section" id="websites">
+      <div class="container">
+        <h2 class="about__title">Websites</h2>
+        <div class="service service--feature">
+          <h3 class="service__title">Website Design for Artists &amp; Art Businesses</h3>
+          <p class="service__meta">Priced by project &middot; <span class="service__price">Request a quote</span></p>
+          <p>A clean, professional website that presents your work the way a curator would: a portfolio of your art, an about page, and an easy way for people to get in touch. I designed and built this website myself.</p>
+          <ul class="service__list">
+            <li>A design tailored to your work, which looks good on phones and computers</li>
+            <li>Portfolio and exhibition pages, with your images arranged and captioned</li>
+            <li>Contact or enquiry forms, and online booking and payments if you need them</li>
+            <li>Set up so your site can be found on Google, connected to your own web address</li>
+          </ul>
+          <p class="service__who"><strong>For:</strong> Artists, galleries, dealers and small creative businesses.</p>
+          <a class="btn service__book" href="#questions" data-inquiry-type="Website Design">Request a quote</a>
+        </div>
+      </div>
+    </section>
+
     <section class="section--tight acq-section" id="how">
       <div class="container">
         <h2 class="about__title">How It Works</h2>
@@ -84,8 +104,8 @@
 
     <section class="section inquiries" id="questions">
       <div class="container">
-        <h2 class="about__title">Questions Before Booking?</h2>
-        <p class="inquiries__intro">Not sure which session is right for you, or none of the available times work? Send me a note and I&rsquo;ll get back to you.</p>
+        <h2 class="about__title">Questions &amp; Quotes</h2>
+        <p class="inquiries__intro">Not sure which session is right for you, none of the available times work, or you&rsquo;d like a quote for a website? Send me a note and I&rsquo;ll get back to you.</p>
 
         <form class="inquiry" data-endpoint="https://formspree.io/f/xyekejkr" method="post" aria-describedby="inquiry-status">
           <div class="inquiry__row">
@@ -100,12 +120,13 @@
           </div>
 
           <div class="inquiry__field">
-            <label for="con-type">Session <span class="inquiry__optional">(optional)</span></label>
+            <label for="con-type">Session or service <span class="inquiry__optional">(optional)</span></label>
             <select id="con-type" name="inquiry_type" autocomplete="off">
               <option value="">Choose one</option>
               <option>Collector Consultation</option>
               <option>Art &amp; Object Assessment</option>
               <option>Artist Career Session</option>
+              <option value="Website Design" data-subject="Website design enquiry from madelineheller.com">Website Design</option>
             </select>
           </div>
 
