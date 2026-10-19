@@ -18,6 +18,7 @@
     { label: "Acquisitions",                 href: "acquisitions.html" },
     { label: "Artists",                      href: "artists.html" },
     { label: "Consultations",                href: "consultations.html" },
+    { label: "Events",                       href: "events.html" },
     { label: "Portfolio", children: [
       { label: "Social Media Work for Toasty Gold Inc.", href: "social-media-toasty-gold.html" },
       { label: "Dissertation",                 href: "dissertation.html" },
