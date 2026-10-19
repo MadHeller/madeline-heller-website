@@ -558,3 +558,28 @@
 .offer-list__item p { font-family: var(--font-sans); }
 @media (max-width: 620px) { .offer-list { grid-template-columns: 1fr; } }
 .inquiry__note { font-family: var(--font-serif); font-style: italic; opacity: 0.8; margin: calc(var(--sp-2) * -1) 0 0; }
+
+/* =========================================================================
+   CONSULTATIONS
+   ========================================================================= */
+.services { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--sp-4); }
+@media (max-width: 900px) { .services { grid-template-columns: 1fr; max-width: 640px; margin-inline: auto; } }
+.service {
+  display: flex; flex-direction: column;
+  padding: var(--sp-4) var(--sp-3);
+  border: 1px solid rgba(182, 172, 198, 0.4);
+  border-radius: var(--radius);
+}
+.service p { font-family: var(--font-sans); margin-bottom: var(--sp-2); }
+.service__title { font-family: var(--font-serif); font-size: var(--fs-h2); color: var(--c-lilac); margin-bottom: var(--sp-1); }
+.service__meta { font-size: var(--fs-small); letter-spacing: 0.04em; text-transform: uppercase; color: var(--on-dark-dim); }
+.service__price { color: var(--c-white); font-weight: 600; }
+.service__who { color: var(--on-dark-dim); }
+.service__note { font-family: var(--font-serif) !important; font-style: italic; font-size: var(--fs-small); color: var(--on-dark-dim); border-left: 2px solid var(--c-lilac); padding-left: var(--sp-2); }
+.service__book { margin-top: auto; align-self: flex-start; }
+.steps { max-width: 720px; margin: 0 auto; padding-left: var(--sp-3); }
+.steps li { list-style: decimal; font-family: var(--font-sans); margin-bottom: var(--sp-2); }
+.services__small { font-size: var(--fs-small); margin-top: var(--sp-4); opacity: 0.85; }
+.inquiry__check { display: flex; align-items: flex-start; gap: var(--sp-1); }
+.inquiry__check input { width: auto; flex: none; margin-top: 0.35em; accent-color: var(--c-lilac); }
+.inquiry__check label { font-size: var(--fs-body); margin: 0; }
