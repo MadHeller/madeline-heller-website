@@ -536,11 +536,13 @@
   line-height: 1;
   margin: 0;
 }
-.flesch-about__logo { width: clamp(120px, 14vw, 180px); height: auto; }
+.flesch-about__logo { width: clamp(200px, 22vw, 280px); height: auto; border-radius: var(--radius); }
 .flesch-about__title { font-family: var(--font-serif); font-size: var(--fs-h3); margin-bottom: var(--sp-1); }
 .flesch-about__text p { font-family: var(--font-sans); max-width: 62ch; }
+.flesch-about__text p + p { margin-top: var(--sp-2); }
 @media (max-width: 620px) {
   .flesch-about { grid-template-columns: 1fr; gap: var(--sp-2); }
+  .flesch-about__logo { width: min(100%, 300px); }
 }
 .offer-list {
   display: grid;
@@ -665,3 +667,15 @@
 .inscription__es { font-style: italic; }
 .inscription footer { font-family: var(--font-sans); font-size: var(--fs-small); font-style: normal; opacity: 0.7; }
 .acq-work__more { font-family: var(--font-sans); font-size: var(--fs-small); letter-spacing: 0.04em; margin-bottom: var(--sp-2); }
+
+/* Centered heading block (Acquisitions and Artists) */
+.project-hero--centered .container { text-align: center; }
+.project-hero--centered .project-hero__intro,
+.project-hero--centered .project-hero__subtitle { margin-inline: auto; }
+.project-hero--centered .flesch-about { margin-inline: auto; text-align: left; }
+.project-hero--centered .jump,
+.project-hero--centered .social-hero__links { justify-content: center; }
+@media (max-width: 620px) {
+  .project-hero--centered .social-hero__links { margin-inline: auto; }
+  .project-hero--centered .flesch-about__logo { display: block; margin-inline: auto; }
+}
