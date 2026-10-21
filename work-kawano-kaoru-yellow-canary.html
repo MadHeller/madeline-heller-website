@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Yellow Canary — Acquisitions — Madeline Heller</title>
+  <meta name="description" content="Kawano Kaoru, Yellow Canary. Japanese shin hanga color woodblock print. Previously sold by Madeline Heller (Flesch).">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Asset&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@400;500;600;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/tokens.css?v=20261020f">
+  <link rel="stylesheet" href="css/base.css?v=20261020f">
+  <link rel="stylesheet" href="css/components.css?v=20261020f">
+  <link rel="stylesheet" href="css/pages.css?v=20261020f">
+  <script src="js/site.js?v=20261020f" defer></script>
+  <script src="js/contact.js?v=20261020f" defer></script>
+  <script src="js/gallery.js?v=20261020f" defer></script>
+  <!-- Visitor statistics (GoatCounter: privacy-friendly, no cookies). Dashboard: https://madelineheller.goatcounter.com -->
+  <script data-goatcounter="https://madelineheller.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+</head>
+<body class="theme-project">
+  <div data-nav></div>
+
+  <main>
+    <section class="section--tight work-page">
+      <div class="container">
+        <a class="work__back" href="acquisitions.html#sold">&larr; All acquisitions</a>
+
+        <div class="work">
+          <div class="work__images">
+            <a class="g-link work__main" href="assets/images/acquisitions/kawano-kaoru-yellow-canary.jpg" data-caption="Kawano Kaoru, Yellow Canary (sold)">
+              <img src="assets/images/acquisitions/kawano-kaoru-yellow-canary.jpg" width="1200" height="1200" decoding="async" alt="Yellow Canary, a Japanese woodblock print by Kawano Kaoru: a long-haired woman in profile against a black background looks down at a small yellow bird perched on her shoulder; shown in a cream mat and a wavy black frame.">
+            </a>
+            <p class="work__hint">Click the photo to enlarge it.</p>
+          </div>
+
+          <div class="work__info">
+            <p class="acq-work__artist">Kawano Kaoru</p>
+            <h1 class="work__title"><em>Yellow Canary</em></h1>
+            <p class="acq-work__meta">Japanese shin hanga color woodblock print<br>Image approx. 4 3/8 &times; 6 3/8 in.<br>Signed with the artist&rsquo;s seal</p>
+            <p class="acq-work__status acq-work__status--sold">Sold</p>
+            <a class="btn btn--outline" href="#inquire" data-similar="Kawano Kaoru, Yellow Canary">Looking for something similar?</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section inquiries" id="inquire">
+      <div class="container">
+        <h2 class="about__title">Inquire</h2>
+        <p class="inquiries__intro">Looking for something similar? Tell me a little about what you have in mind and I&rsquo;ll be in touch.</p>
+
+        <form class="inquiry" data-endpoint="https://formspree.io/f/xyekejkr" method="post" aria-describedby="inquiry-status">
+          <div class="inquiry__row">
+            <div class="inquiry__field">
+              <label for="inq-name">Name</label>
+              <input id="inq-name" name="name" type="text" autocomplete="name" required maxlength="100">
+            </div>
+            <div class="inquiry__field">
+              <label for="inq-email">Email</label>
+              <input id="inq-email" name="email" type="email" autocomplete="email" required maxlength="150">
+            </div>
+          </div>
+
+          <div class="inquiry__field">
+            <label for="inq-type">I am interested in</label>
+            <select id="inq-type" name="inquiry_type">
+              <option>A work listed above</option>
+              <option selected>A work I am looking for</option>
+              <option>The full portfolio</option>
+              <option>Something else</option>
+            </select>
+          </div>
+
+          <div class="inquiry__field">
+            <label for="inq-work">Work or artist <span class="inquiry__optional">(optional)</span></label>
+            <input id="inq-work" name="work_or_artist" type="text" maxlength="200" value="Something similar to Kawano Kaoru, Yellow Canary">
+          </div>
+
+          <div class="inquiry__field">
+            <label for="inq-message">Message</label>
+            <textarea id="inq-message" name="message" required minlength="10" maxlength="5000"></textarea>
+          </div>
+
+          <div class="inquiry__hp" aria-hidden="true">
+            <label for="inq-website">Leave this field empty</label>
+            <input id="inq-website" name="_gotcha" type="text" tabindex="-1" autocomplete="off">
+          </div>
+          <input type="hidden" name="_subject" value="Acquisitions inquiry from madelineheller.com">
+          <input type="hidden" name="form_page" value="Acquisition: Yellow Canary">
+
+          <div class="inquiry__actions">
+            <button class="btn" type="submit">Send inquiry</button>
+            <p class="inquiry__status" id="inquiry-status" role="status" aria-live="polite"></p>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <div data-footer></div>
+</body>
+</html>

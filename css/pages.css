@@ -216,8 +216,8 @@
 .acq-work__image { border-radius: var(--radius); }
 /* Every main picture sits in the same square frame so the cards line up; the whole work
    is always shown (never cropped), on a soft light background */
-.acq-work__image > .g-link:first-child { display: block; }
-.acq-work__image > .g-link:first-child img {
+.acq-work__image > a:first-child { display: block; }
+.acq-work__image > a:first-child img {
   display: block;
   width: 100%;
   height: auto;
@@ -635,3 +635,33 @@
 }
 .events--grid .event__body { display: flex; flex-direction: column; flex: 1; }
 .events--grid .event__link { margin-top: auto; }
+
+/* =========================================================================
+   ACQUISITION DETAIL PAGE
+   ========================================================================= */
+.work__back { display: inline-block; font-family: var(--font-sans); font-size: var(--fs-small); letter-spacing: 0.04em; margin-bottom: var(--sp-3); }
+.work { display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr); gap: var(--sp-5); align-items: start; }
+@media (max-width: 900px) { .work { grid-template-columns: 1fr; gap: var(--sp-4); } }
+.work__main { display: block; }
+.work__main img { display: block; width: 100%; height: auto; border-radius: var(--radius); }
+.work__hint { font-family: var(--font-serif); font-style: italic; font-size: var(--fs-small); opacity: 0.8; margin: var(--sp-1) 0 var(--sp-2); }
+.work__thumbs { display: grid; grid-template-columns: repeat(auto-fill, minmax(96px, 1fr)); gap: var(--sp-1); }
+.work__thumbs a { display: block; border-radius: var(--radius); transition: opacity var(--transition); }
+.work__thumbs a:hover { opacity: 0.75; }
+.work__thumbs img { display: block; width: 100%; height: auto; aspect-ratio: 1 / 1; object-fit: cover; border-radius: var(--radius); }
+.work__info p { font-family: var(--font-sans); }
+.work__info .acq-work__meta, .work__info .acq-work__price, .work__info .acq-work__artist { font-family: var(--font-serif); }
+.work__info .acq-work__artist { font-family: var(--font-sans); }
+.work__title { font-family: var(--font-serif); font-weight: 400; text-transform: none; letter-spacing: normal; font-size: var(--fs-h2); line-height: var(--lh-snug); margin-top: var(--sp-1); }
+.work__subtitle { font-family: var(--font-serif) !important; font-size: var(--fs-lead); opacity: 0.85; }
+.work__note { font-family: var(--font-serif) !important; font-style: italic; font-size: var(--fs-small); opacity: 0.8; margin-top: var(--sp-1); }
+.work__note--wide { max-width: 900px; }
+.work__h2 { font-family: var(--font-serif); font-weight: 400; font-size: var(--fs-h3); color: var(--c-lilac); margin: var(--sp-4) 0 var(--sp-1); }
+.work__h2--wide { margin-top: var(--sp-5); }
+.inscription { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--sp-3); max-width: 900px; }
+@media (max-width: 700px) { .inscription { grid-template-columns: 1fr; } }
+.inscription blockquote { margin: 0; padding: var(--sp-2) var(--sp-3); border-left: 2px solid var(--c-lilac); font-family: var(--font-serif); font-size: var(--fs-lead); }
+.inscription blockquote p { margin: 0 0 var(--sp-2); }
+.inscription__es { font-style: italic; }
+.inscription footer { font-family: var(--font-sans); font-size: var(--fs-small); font-style: normal; opacity: 0.7; }
+.acq-work__more { font-family: var(--font-sans); font-size: var(--fs-small); letter-spacing: 0.04em; margin-bottom: var(--sp-2); }
