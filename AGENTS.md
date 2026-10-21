@@ -185,6 +185,13 @@ Important consequences:
 - Anything on the site (phone numbers, emails, PDFs in `assets/docs/`) can show
   up in search results. Check with the owner before adding personal details.
 
+### Adding an artwork (Acquisitions)
+Use the helper script **outside the repo**: `~/Documents/madeline-website-tools/add_work.py`
+(see README.txt there). It resizes photos, adds the card, creates `work-<slug>.html`, updates
+`sitemap.xml`, bumps the `?v=` tag, and runs checks. It only changes local files; publishing
+still waits for the owner's go-ahead (§11). Never reuse class names from other pages: the
+detail-page layout uses `.piece*` because `.work*` belongs to the Home page cards.
+
 ### Hiding the site from search again (only if she asks)
 1. Add `<meta name="robots" content="noindex, nofollow">` to every page's `<head>`.
 2. Change `robots.txt` to `Disallow: /`.
