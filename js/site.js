@@ -40,6 +40,7 @@
   var SOCIAL = [
     { label: "Instagram", href: "https://www.instagram.com/flesch_inc/" },
     { label: "Threads",   href: "https://www.threads.net/@flesch_inc" },
+    { label: "Substack",  href: "https://intheflesch.substack.com" },
     { label: "Email",     href: "mailto:Madeline-Heller@outlook.com" },
     { label: "LinkedIn",  href: "https://www.linkedin.com/in/madeline-heller-95a119304" },
     { label: "Inquiries", href: "index.html#inquiries" },
