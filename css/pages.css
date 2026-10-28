@@ -716,3 +716,4 @@
 .linkhub__title { display: block; font-family: var(--font-serif); font-size: var(--fs-h2); line-height: var(--lh-snug); font-style: italic; }
 .linkhub__text { display: block; margin-top: var(--sp-1); font-family: var(--font-sans); font-size: var(--fs-small); line-height: var(--lh-snug); color: var(--c-ink-soft); }
 @media (prefers-reduced-motion: reduce) { .linkhub__item:hover, .linkhub__item:focus-visible { transform: none; } }
+@media (max-width: 620px) { .linkhub-hero__bg, .linkhub-art { display: none; } }
