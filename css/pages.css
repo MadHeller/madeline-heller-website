@@ -717,3 +717,25 @@
 .linkhub__text { display: block; margin-top: var(--sp-1); font-family: var(--font-sans); font-size: var(--fs-small); line-height: var(--lh-snug); color: var(--c-ink-soft); }
 @media (prefers-reduced-motion: reduce) { .linkhub__item:hover, .linkhub__item:focus-visible { transform: none; } }
 @media (max-width: 620px) { .linkhub-hero__bg, .linkhub-art { display: none; } }
+
+.linkhub-arch { display: none; }
+@media (max-width: 620px) {
+  body.linkhub-page { background: #fcf9f2; --nav-bg: var(--c-black); }
+  .linkhub-page .project-hero { background: transparent; padding-top: var(--sp-3); }
+  .linkhub-hero .container { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+  .linkhub-arch { display: block; position: relative; z-index: 1; max-width: 21rem; margin: 0 auto; padding: 0 var(--sp-2); }
+  .linkhub-arch svg { display: block; width: 100%; height: auto; font-family: "Cormorant Garamond", Georgia, serif; text-anchor: middle; }
+  .linkhub-arch__bgf { fill: #e4dded; font-family: "Pinyon Script", cursive; font-size: 16px; }
+  .linkhub-arch__welcome { fill: #7a6a96; font-size: 13px; letter-spacing: 6px; }
+  .linkhub-arch__ringa, .linkhub-arch__ringb { font-family: "Pinyon Script", cursive; }
+  .linkhub-arch__ringa { fill: #fcf9f2; font-size: 26px; }
+  .linkhub-arch__ringb { fill: #6a5a88; font-size: 20px; }
+  .linkhub-arch__name { fill: #4a3d63; font-family: "Pinyon Script", cursive; font-size: 46px; }
+  .linkhub-arch__tag { fill: #6e6862; font-size: 10px; letter-spacing: 3px; }
+  .linkhub-section { background: transparent; padding-top: var(--sp-2); }
+  .linkhub__item, .linkhub li:nth-child(even) .linkhub__item { padding: 0.7rem var(--sp-3); border: 1.5px dashed #6a5a88; border-radius: 999px; background: #dcd3e8; color: #4a3d63; }
+  .linkhub li:nth-child(odd) .linkhub__item { background: #fcf9f2; }
+  .linkhub li .linkhub__item--pop, .linkhub li:nth-child(even) .linkhub__item--pop { background: #8e82a6; color: #fcf9f2; border-color: #c9b79c; }
+  .linkhub__title { font-family: "Cormorant Garamond", Georgia, serif; font-style: normal; font-weight: 500; font-size: 1.2rem; }
+  .linkhub__text { display: none; }
+}
