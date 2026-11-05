@@ -38,8 +38,8 @@
   };
 
   var SOCIAL = [
-    { label: "Instagram", href: "https://www.instagram.com/flesch_inc/" },
-    { label: "Threads",   href: "https://www.threads.net/@flesch_inc" },
+    { label: "Instagram", href: "https://www.instagram.com/flesch.gallery/" },
+    { label: "Threads",   href: "https://www.threads.net/@flesch.gallery" },
     { label: "Substack",  href: "https://intheflesch.substack.com" },
     { label: "Email",     href: "mailto:Madeline-Heller@outlook.com" },
     { label: "LinkedIn",  href: "https://www.linkedin.com/in/madeline-heller-95a119304" },
