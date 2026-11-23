@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Subscribe — Madeline Heller</title>
+  <meta name="description" content="Subscribe to the Flesch newsletter for new acquisitions, artists and exhibitions, from art historian and curator Madeline Heller.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Asset&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@400;500;600;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/tokens.css?v=20261123e">
+  <link rel="stylesheet" href="css/base.css?v=20261123e">
+  <link rel="stylesheet" href="css/components.css?v=20261123e">
+  <link rel="stylesheet" href="css/pages.css?v=20261123e">
+  <script src="js/site.js?v=20261123e" defer></script>
+  <!-- Visitor statistics (GoatCounter: privacy-friendly, no cookies). Dashboard: https://madelineheller.goatcounter.com -->
+  <script data-goatcounter="https://madelineheller.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+</head>
+<body class="theme-project page-subscribe">
+  <div data-nav></div>
+
+  <main>
+    <section class="project-hero project-hero--centered">
+      <div class="container">
+        <h1 class="display-sans">Subscribe</h1>
+        <p class="project-hero__subtitle">New works, artists and exhibitions, by email</p>
+        <p class="prose project-hero__intro">
+          Join the Flesch list to hear first about new acquisitions, the artists I&rsquo;m working with,
+          and exhibitions worth seeing. I will never share your email address.
+        </p>
+        <form class="signup signup--page" action="https://intheflesch.substack.com/api/v1/free?nojs=true" method="post" target="_blank">
+          <div class="signup__row">
+            <label class="signup__label" for="subscribe-email">Email address</label>
+            <input class="signup__input" id="subscribe-email" type="email" name="email" placeholder="Your email address" autocomplete="email" required>
+            <button class="btn signup__btn" type="submit">Subscribe</button>
+          </div>
+          <p class="signup__note">Delivered through Substack. After you subscribe, check your inbox to confirm. Unsubscribe any time.</p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <div data-footer></div>
+</body>
+</html>

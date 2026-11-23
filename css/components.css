@@ -325,3 +325,9 @@
 .signup__btn { flex: 0 0 auto; cursor: pointer; background: var(--c-ink); color: var(--c-white); border: 1px solid var(--c-ink); border-radius: 999px; }
 .signup__btn:hover { background: var(--c-ink-soft); }
 .signup__note { font-size: 0.8rem; opacity: 0.7; margin-top: var(--sp-1); }
+
+/* Subscribe page: centered form; footer form hidden here so there is only one */
+.signup--page { margin: var(--sp-4) auto 0; text-align: left; }
+.page-subscribe .site-footer .signup { display: none; }
+.page-subscribe .signup__btn { background: var(--c-lilac); color: #1c1922; border-color: var(--c-lilac); }
+.page-subscribe .signup__btn:hover { background: var(--c-lilac-soft); }

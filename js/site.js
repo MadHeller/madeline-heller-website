@@ -165,7 +165,7 @@
       '<div class="container">' +
         '<form class="signup" action="https://intheflesch.substack.com/api/v1/free?nojs=true" method="post" target="_blank">' +
           '<h2 class="signup__title">New works, by email</h2>' +
-          '<p class="signup__text">Occasional notes on new acquisitions and artists I admire.</p>' +
+          '<p class="signup__text">Notes on new acquisitions and artists I admire.</p>' +
           '<div class="signup__row">' +
             '<label class="signup__label" for="signup-email">Email address</label>' +
             '<input class="signup__input" id="signup-email" type="email" name="email" placeholder="Your email address" autocomplete="email" required>' +
