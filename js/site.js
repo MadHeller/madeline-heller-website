@@ -163,6 +163,16 @@
     var footer = el("footer", { class: "site-footer" });
     footer.innerHTML =
       '<div class="container">' +
+        '<form class="signup" action="https://intheflesch.substack.com/api/v1/free?nojs=true" method="post" target="_blank">' +
+          '<h2 class="signup__title">New works, by email</h2>' +
+          '<p class="signup__text">Occasional notes on new acquisitions and artists I admire.</p>' +
+          '<div class="signup__row">' +
+            '<label class="signup__label" for="signup-email">Email address</label>' +
+            '<input class="signup__input" id="signup-email" type="email" name="email" placeholder="Your email address" autocomplete="email" required>' +
+            '<button class="btn signup__btn" type="submit">Subscribe</button>' +
+          "</div>" +
+          '<p class="signup__note">Delivered through Substack. Unsubscribe any time.</p>' +
+        "</form>" +
         '<p class="site-footer__name">Madeline Heller</p>' +
         '<p class="site-footer__row"><a class="link" href="mailto:' + CONTACT.email + '">' + CONTACT.email + "</a></p>" +
         (CONTACT.phone ? '<p class="site-footer__row">' + CONTACT.phone + "</p>" : "") +
