@@ -3,19 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Consultations — Madeline Heller</title>
-  <meta name="description" content="Book a consultation with art historian and curator Madeline Heller: collector advice, informal art and object assessments, career sessions for artists, and website design for artists and art businesses.">
+  <title>Consultations &amp; Services — Madeline Heller</title>
+  <meta name="description" content="Consultations and services from art historian and curator Madeline Heller: collector advice, informal art and object assessments, career sessions for artists, art sourcing for clients, and website design for artists and art businesses.">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Asset&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@400;500;600;800&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="css/tokens.css?v=20261123e">
-  <link rel="stylesheet" href="css/base.css?v=20261123e">
-  <link rel="stylesheet" href="css/components.css?v=20261123e">
-  <link rel="stylesheet" href="css/pages.css?v=20261123e">
-  <script src="js/site.js?v=20261123e" defer></script>
-  <script src="js/contact.js?v=20261123e" defer></script>
+  <link rel="stylesheet" href="css/tokens.css?v=20261124a">
+  <link rel="stylesheet" href="css/base.css?v=20261124a">
+  <link rel="stylesheet" href="css/components.css?v=20261124a">
+  <link rel="stylesheet" href="css/pages.css?v=20261124a">
+  <script src="js/site.js?v=20261124a" defer></script>
+  <script src="js/contact.js?v=20261124a" defer></script>
   <!-- Visitor statistics (GoatCounter: privacy-friendly, no cookies). Dashboard: https://madelineheller.goatcounter.com -->
   <script data-goatcounter="https://madelineheller.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
 </head>
@@ -25,15 +25,17 @@
   <main>
     <section class="project-hero project-hero--centered">
       <div class="container">
-        <h1 class="display-sans">Consultations</h1>
+        <h1 class="display-sans">Consultations &amp; Services</h1>
         <p class="project-hero__subtitle">One-to-one advice from an art historian and curator</p>
         <p class="prose project-hero__intro">
           Drawing on my training at The Courtauld Institute of Art, my experience at Christie&rsquo;s, and my
           everyday work with estate collections, I offer focused, friendly sessions for collectors, owners of
-          inherited pieces, and artists. I also design websites for artists and art businesses.
+          inherited pieces, and artists. I also source specific works of art for clients and design websites for
+          artists and art businesses.
         </p>
         <nav class="jump" aria-label="Jump to a section">
           <a href="#services">Sessions</a>
+          <a href="#sourcing">Art sourcing</a>
           <a href="#websites">Websites</a>
           <a href="#how">How it works</a>
           <a href="#questions">Questions &amp; quotes</a>
@@ -71,6 +73,24 @@
       </div>
     </section>
 
+    <section class="section--tight acq-section" id="sourcing">
+      <div class="container">
+        <h2 class="about__title">Art Sourcing</h2>
+        <div class="service service--feature">
+          <h3 class="service__title">Finding a Work for You</h3>
+          <p class="service__meta">By inquiry &middot; <span class="service__price">Request details</span></p>
+          <p>Looking for a particular artist, period or kind of piece? Tell me what you have in mind, along with your budget and timing, and I&rsquo;ll search for it on your behalf, drawing on auctions, dealers and estate sales.</p>
+          <ul class="service__list">
+            <li>A specific artist, medium, subject or size, or a work to suit a particular room</li>
+            <li>Each candidate checked for condition and priced against comparable sales</li>
+            <li>A short written summary of the options, so you can decide with confidence</li>
+          </ul>
+          <p class="service__who"><strong>For:</strong> Collectors, interior designers, and anyone searching for something specific.</p>
+          <a class="btn service__book" href="#questions" data-inquiry-type="Art Sourcing">Request details</a>
+        </div>
+      </div>
+    </section>
+
     <section class="section--tight acq-section" id="websites">
       <div class="container">
         <h2 class="about__title">Websites</h2>
@@ -105,7 +125,7 @@
     <section class="section inquiries" id="questions">
       <div class="container">
         <h2 class="about__title">Questions &amp; Quotes</h2>
-        <p class="inquiries__intro">Not sure which session is right for you, none of the available times work, or you&rsquo;d like a quote for a website? Send me a note and I&rsquo;ll get back to you.</p>
+        <p class="inquiries__intro">Not sure which session is right for you, none of the available times work, you&rsquo;re looking for a particular work of art, or you&rsquo;d like a quote for a website? Send me a note and I&rsquo;ll get back to you.</p>
 
         <form class="inquiry" data-endpoint="https://formspree.io/f/xyekejkr" method="post" aria-describedby="inquiry-status">
           <div class="inquiry__row">
@@ -126,6 +146,7 @@
               <option>Collector Consultation</option>
               <option>Art &amp; Object Assessment</option>
               <option>Artist Career Session</option>
+              <option value="Art Sourcing" data-subject="Art sourcing enquiry from madelineheller.com">Art Sourcing</option>
               <option value="Website Design" data-subject="Website design enquiry from madelineheller.com">Website Design</option>
             </select>
           </div>

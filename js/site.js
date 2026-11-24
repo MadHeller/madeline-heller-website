@@ -17,7 +17,7 @@
     { label: "About",                        href: "info.html" },
     { label: "Acquisitions",                 href: "acquisitions.html" },
     { label: "Artists",                      href: "artists.html" },
-    { label: "Consultations",                href: "consultations.html" },
+    { label: "Services",                     href: "consultations.html" },
     { label: "Events",                       href: "events.html" },
     { label: "Reading List",                 href: "reading.html" },
     { label: "Portfolio", children: [
