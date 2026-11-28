@@ -10,13 +10,14 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Asset&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@400;500;600;800&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="css/tokens.css?v=20261124a">
-  <link rel="stylesheet" href="css/base.css?v=20261124a">
-  <link rel="stylesheet" href="css/components.css?v=20261124a">
-  <link rel="stylesheet" href="css/pages.css?v=20261124a">
-  <script src="js/site.js?v=20261124a" defer></script>
-  <script src="js/contact.js?v=20261124a" defer></script>
-  <script src="js/gallery.js?v=20261124a" defer></script>
+  <link rel="stylesheet" href="css/tokens.css?v=20261127d">
+  <link rel="stylesheet" href="css/base.css?v=20261127d">
+  <link rel="stylesheet" href="css/components.css?v=20261127d">
+  <link rel="stylesheet" href="css/pages.css?v=20261127d">
+  <script src="js/site.js?v=20261127d" defer></script>
+  <script src="js/contact.js?v=20261127d" defer></script>
+  <script src="js/gallery.js?v=20261127d" defer></script>
+  <script src="js/categories.js?v=20261127d" defer></script>
   <!-- Visitor statistics (GoatCounter: privacy-friendly, no cookies). Dashboard: https://madelineheller.goatcounter.com -->
   <script data-goatcounter="https://madelineheller.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
 </head>
@@ -29,7 +30,7 @@
         <h1 class="display-sans">Acquisitions</h1>
         <p class="project-hero__subtitle">Works available for acquisition</p>
         <p class="prose project-hero__intro">
-          A selection of works I currently have available. Prices are available on request.
+          A selection of works I currently have available. Some prices are listed; others are available on request.
           If you are looking for a particular artist or work, or would like to see the full
           portfolio, send me a note below.
         </p>
@@ -72,63 +73,17 @@
       <div class="container">
         <h2 class="about__title">Available Works</h2>
 
+        <div class="acq-filter" role="group" aria-label="Show works by type" data-acq-filter hidden>
+          <button type="button" data-show="all" aria-pressed="true">All</button>
+          <button type="button" data-show="paintings" aria-pressed="false">Paintings</button>
+          <button type="button" data-show="prints" aria-pressed="false">Prints</button>
+          <button type="button" data-show="drawings" aria-pressed="false">Drawings</button>
+        </div>
+        <p class="acq-filter__status" role="status" data-acq-filter-status></p>
+
         <div class="acq-grid">
 
-          <article class="acq-work">
-            <div class="acq-work__image">
-              <a href="work-ken-orton-attention.html">
-                <img src="assets/images/acquisitions/ken-orton-attention-front.jpg" width="1254" height="1254" alt="Attention, a limited edition giclée print by Ken Orton: a close-up still life of vintage glass jars and bottles with embossed lettering, shown in a white mat, signed and numbered in pencil.">
-              </a>
-              <div class="acq-work__views" aria-hidden="true"></div>
-            </div>
-            <div class="acq-work__info">
-              <p class="acq-work__artist">Ken Orton</p>
-              <h3 class="acq-work__title"><a href="work-ken-orton-attention.html"><em>Attention</em></a></h3>
-              <p class="acq-work__meta">Limited edition giclée on paper, hand finished by the artist<br>Matted, with hard backing board<br>11 &times; 14 in.<br>Signed and numbered 3/500<br>With the gallery&rsquo;s giclée certificate</p>
-              <p class="acq-work__status acq-work__status--available">Available</p>
-              <p class="acq-work__price">Price on request</p>
-              <a class="link acq-work__more" href="work-ken-orton-attention.html">View details &rarr;</a>
-              <a class="btn acq-work__inquire" href="#inquire" data-work="Ken Orton, Attention">Inquire about this work</a>
-            </div>
-          </article>
-
-          <article class="acq-work">
-            <div class="acq-work__image">
-              <a href="work-sunset-riders.html">
-                <img src="assets/images/acquisitions/sunset-riders-front.jpg" width="1129" height="1200" loading="lazy" decoding="async" alt="Sunset Riders, a vintage impressionist oil painting: riders on horseback with long lances driving dark bulls through a glowing landscape of gold and amber light, painted with thick textured brushwork, in a dark carved wood frame with a linen liner.">
-              </a>
-              <div class="acq-work__views" aria-hidden="true"></div>
-            </div>
-            <div class="acq-work__info">
-              <p class="acq-work__artist">Unidentified artist, signed &ldquo;H.&nbsp;K&hellip;&rdquo;</p>
-              <h3 class="acq-work__title"><a href="work-sunset-riders.html">Sunset Riders</a></h3>
-              <p class="acq-work__meta">Impressionist oil painting, c. 1970s<br>Signed lower right; initials &ldquo;H.&nbsp;K&rdquo;, the rest partially legible<br>Approx. 18 &times; 16 in.<br>In an ornate carved wood frame with linen liner<br>Good vintage condition, with light age-related wear to the frame</p>
-              <p class="acq-work__status acq-work__status--available">Available</p>
-              <p class="acq-work__price">Price on request</p>
-              <a class="link acq-work__more" href="work-sunset-riders.html">View details &rarr;</a>
-              <a class="btn acq-work__inquire" href="#inquire" data-work="Sunset Riders, vintage oil painting">Inquire about this work</a>
-            </div>
-          </article>
-
-          <article class="acq-work">
-            <div class="acq-work__image">
-              <a href="work-after-van-dyck-james-stuart.html">
-                <img src="assets/images/acquisitions/after-van-dyck-james-stuart.jpg" width="1200" height="1200" loading="lazy" decoding="async" alt="A full-length oil portrait after Anthony van Dyck: a young nobleman with long curly hair, a white lace collar and a black cloak bearing the silver star of the Order of the Garter, resting his hand on the head of a tall tan greyhound, against a dark curtain, in a gilt wood frame.">
-              </a>
-              <div class="acq-work__views" aria-hidden="true"></div>
-            </div>
-            <div class="acq-work__info">
-              <p class="acq-work__artist">After Anthony van Dyck</p>
-              <h3 class="acq-work__title"><a href="work-after-van-dyck-james-stuart.html"><em>James Stuart, Duke of Richmond and Lennox</em></a></h3>
-              <p class="acq-work__meta">Oil painting, a later copy of Van Dyck&rsquo;s portrait of about 1633&ndash;35 in the Metropolitan Museum of Art, New York<br>In a gilt wood frame; approx. 19 &times; 30 in. framed<br>Old handwritten label on the back identifying the subject<br>Accompanied by a brochure of the New York icon painter and restorer Antoine M. Solounias</p>
-              <p class="acq-work__status acq-work__status--available">Available</p>
-              <p class="acq-work__price">Price on request</p>
-              <a class="link acq-work__more" href="work-after-van-dyck-james-stuart.html">View details &rarr;</a>
-              <a class="btn acq-work__inquire" href="#inquire" data-work="After Anthony van Dyck, James Stuart, Duke of Richmond and Lennox">Inquire about this work</a>
-            </div>
-          </article>
-
-          <article class="acq-work">
+          <article class="acq-work" data-category="paintings">
             <div class="acq-work__image">
               <a href="work-harry-newman-the-stream.html">
                 <img src="assets/images/acquisitions/harry-newman-long-island.jpg" width="1200" height="1200" loading="lazy" decoding="async" alt="The Stream, an impressionist oil landscape by Harry W. Newman: a winding stream through a wintry valley with bare trees, purple-blue hills and a pink and blue sky, in a wide carved gilt frame.">
@@ -146,7 +101,79 @@
             </div>
           </article>
 
-          <article class="acq-work">
+          <article class="acq-work" data-category="prints">
+            <div class="acq-work__image">
+              <a href="work-dali-el-greco.html">
+                <img src="assets/images/acquisitions/dali-el-greco.jpg" width="1254" height="1254" loading="lazy" decoding="async" alt="A sepia etching of a bearded man in profile wearing a ruffled collar, signed Dalí in the plate, shown with a white mat in a thin brown frame.">
+              </a>
+              <div class="acq-work__views" aria-hidden="true"></div>
+            </div>
+            <div class="acq-work__info">
+              <p class="acq-work__artist">Salvador Dalí (1904–1989)</p>
+              <h3 class="acq-work__title"><a href="work-dali-el-greco.html"><em>El Greco</em></a></h3>
+              <p class="acq-work__meta">Etching in sepia, circa 1968<br>Plate approx. 6¾ × 4⅞ in.; sheet approx. 10¼ × 8½ in.<br>Signed in the plate; unnumbered<br>Currently unframed; frame shown for illustration</p>
+              <p class="acq-work__status acq-work__status--available">Available</p>
+              <p class="acq-work__price">$800, shipping included (continental US)</p>
+              <a class="link acq-work__more" href="work-dali-el-greco.html">View details &rarr;</a>
+              <a class="btn acq-work__inquire" href="#inquire" data-work="Salvador Dalí (1904–1989), El Greco">Inquire about this work</a>
+            </div>
+          </article>
+
+          <article class="acq-work" data-category="prints">
+            <div class="acq-work__image">
+              <a href="work-ken-orton-attention.html">
+                <img src="assets/images/acquisitions/ken-orton-attention-front.jpg" width="1254" height="1254" alt="Attention, a limited edition giclée print by Ken Orton: a close-up still life of vintage glass jars and bottles with embossed lettering, shown in a white mat, signed and numbered in pencil.">
+              </a>
+              <div class="acq-work__views" aria-hidden="true"></div>
+            </div>
+            <div class="acq-work__info">
+              <p class="acq-work__artist">Ken Orton</p>
+              <h3 class="acq-work__title"><a href="work-ken-orton-attention.html"><em>Attention</em></a></h3>
+              <p class="acq-work__meta">Limited edition giclée on paper, hand finished by the artist<br>Matted, with hard backing board<br>11 &times; 14 in.<br>Signed and numbered 3/500<br>With the gallery&rsquo;s giclée certificate</p>
+              <p class="acq-work__status acq-work__status--available">Available</p>
+              <p class="acq-work__price">Price on request</p>
+              <a class="link acq-work__more" href="work-ken-orton-attention.html">View details &rarr;</a>
+              <a class="btn acq-work__inquire" href="#inquire" data-work="Ken Orton, Attention">Inquire about this work</a>
+            </div>
+          </article>
+
+          <article class="acq-work" data-category="paintings">
+            <div class="acq-work__image">
+              <a href="work-sunset-riders.html">
+                <img src="assets/images/acquisitions/sunset-riders-front.jpg" width="1129" height="1200" loading="lazy" decoding="async" alt="Sunset Riders, a vintage impressionist oil painting: riders on horseback with long lances driving dark bulls through a glowing landscape of gold and amber light, painted with thick textured brushwork, in a dark carved wood frame with a linen liner.">
+              </a>
+              <div class="acq-work__views" aria-hidden="true"></div>
+            </div>
+            <div class="acq-work__info">
+              <p class="acq-work__artist">Unidentified artist, signed &ldquo;H.&nbsp;K&hellip;&rdquo;</p>
+              <h3 class="acq-work__title"><a href="work-sunset-riders.html">Sunset Riders</a></h3>
+              <p class="acq-work__meta">Impressionist oil painting, c. 1970s<br>Signed lower right; initials &ldquo;H.&nbsp;K&rdquo;, the rest partially legible<br>Approx. 18 &times; 16 in.<br>In an ornate carved wood frame with linen liner<br>Good vintage condition, with light age-related wear to the frame</p>
+              <p class="acq-work__status acq-work__status--available">Available</p>
+              <p class="acq-work__price">Price on request</p>
+              <a class="link acq-work__more" href="work-sunset-riders.html">View details &rarr;</a>
+              <a class="btn acq-work__inquire" href="#inquire" data-work="Sunset Riders, vintage oil painting">Inquire about this work</a>
+            </div>
+          </article>
+
+          <article class="acq-work" data-category="paintings">
+            <div class="acq-work__image">
+              <a href="work-after-van-dyck-james-stuart.html">
+                <img src="assets/images/acquisitions/after-van-dyck-james-stuart.jpg" width="1200" height="1200" loading="lazy" decoding="async" alt="A full-length oil portrait after Anthony van Dyck: a young nobleman with long curly hair, a white lace collar and a black cloak bearing the silver star of the Order of the Garter, resting his hand on the head of a tall tan greyhound, against a dark curtain, in a gilt wood frame.">
+              </a>
+              <div class="acq-work__views" aria-hidden="true"></div>
+            </div>
+            <div class="acq-work__info">
+              <p class="acq-work__artist">After Anthony van Dyck</p>
+              <h3 class="acq-work__title"><a href="work-after-van-dyck-james-stuart.html"><em>James Stuart, Duke of Richmond and Lennox</em></a></h3>
+              <p class="acq-work__meta">Oil painting, a later copy of Van Dyck&rsquo;s portrait of about 1633&ndash;35 in the Metropolitan Museum of Art, New York<br>In a gilt wood frame; approx. 19 &times; 30 in. framed<br>Old handwritten label on the back identifying the subject<br>Accompanied by a brochure of the New York icon painter and restorer Antoine M. Solounias</p>
+              <p class="acq-work__status acq-work__status--available">Available</p>
+              <p class="acq-work__price">Price on request</p>
+              <a class="link acq-work__more" href="work-after-van-dyck-james-stuart.html">View details &rarr;</a>
+              <a class="btn acq-work__inquire" href="#inquire" data-work="After Anthony van Dyck, James Stuart, Duke of Richmond and Lennox">Inquire about this work</a>
+            </div>
+          </article>
+
+          <article class="acq-work" data-category="prints">
             <div class="acq-work__image">
               <a href="work-brodowski-september-63.html">
                 <img src="assets/images/acquisitions/brodowski-september-63.jpg" width="1200" height="1200" loading="lazy" decoding="async" alt="A color block print by Samantha Brodowski in black, ochre and cream: a woman in a checked dress sits on the floor hugging a small child beside a curved floor lamp whose cone of light falls across a dark, streaked background; matted in a silver frame.">
@@ -164,7 +191,7 @@
             </div>
           </article>
 
-          <article class="acq-work">
+          <article class="acq-work" data-category="drawings">
             <div class="acq-work__image">
               <a href="work-con-fe-y-esperanza.html">
                 <img src="assets/images/acquisitions/firartiga-water-jar.jpg" width="672" height="838" loading="lazy" decoding="async" alt="A detailed black pen-and-ink drawing on cream paper, mounted on a black mat: a woman balancing a water jar on her head stands among layered faces, children, palm trees and small houses, with a cigar-smoking man beside a rising chart in the upper right.">
@@ -182,7 +209,7 @@
             </div>
           </article>
 
-          <article class="acq-work">
+          <article class="acq-work" data-category="prints">
             <div class="acq-work__image">
               <a href="work-maccari-the-exhibition.html">
                 <img src="assets/images/acquisitions/maccari-the-exhibition.jpg" width="1254" height="1254" loading="lazy" decoding="async" alt="The Exhibition, an etching by Mino Maccari: a small line drawing of a man in a suit bending forward beside a woman in a hat who touches his back, with a seated woman holding a fan of cards at the left, printed in the centre of a large cream sheet with deckled edges and signed and numbered in pencil beneath.">
@@ -200,7 +227,7 @@
             </div>
           </article>
 
-          <article class="acq-work">
+          <article class="acq-work" data-category="prints">
             <div class="acq-work__image">
               <a href="work-maccari-figures-behind-a-grid.html">
                 <img src="assets/images/acquisitions/maccari-figures-behind-a-grid.jpg" width="1226" height="1600" loading="lazy" decoding="async" alt="Figures behind a grid, an etching by Mino Maccari: a woman in a tricorn hat and shaded cape stands at the left, looking at a nude woman in a feathered hat and a bearded man who stand behind a grid of lines, drawn in fine continuous black line within a pressed plate mark.">
@@ -218,7 +245,7 @@
             </div>
           </article>
 
-          <article class="acq-work">
+          <article class="acq-work" data-category="prints">
             <div class="acq-work__image">
               <a href="work-maccari-the-painter-and-the-model.html">
                 <img src="assets/images/acquisitions/maccari-the-painter-and-the-model.jpg" width="1148" height="1600" loading="lazy" decoding="async" alt="The Painter and the Model, an etching by Mino Maccari: a man holds up a drawing of a nude figure while a woman with her hair pinned up sits beside him with a pencil in her hand, drawn in fine continuous black line within a pressed plate mark, in the centre of a large cream sheet.">
@@ -236,7 +263,7 @@
             </div>
           </article>
 
-          <article class="acq-work">
+          <article class="acq-work" data-category="prints">
             <div class="acq-work__image">
               <a href="work-jaques-wool-grass.html">
                 <img src="assets/images/acquisitions/jaques-wool-grass.jpg" width="360" height="360" loading="lazy" decoding="async" alt="Wool Grass, an etching by Bertha E. Jaques: a tall narrow plate showing sprays of tiny dark flowers on long curving stems that loop across a pale sepia ground, set in a cream mat.">
@@ -248,13 +275,13 @@
               <h3 class="acq-work__title"><a href="work-jaques-wool-grass.html"><em>Wool Grass</em></a></h3>
               <p class="acq-work__meta">Etching on paper, inscribed 1933<br>Plate approx. 6 × 13 in.; mat approx. 14 × 18 in.<br>Signed in pencil “Bertha E. Jaques” lower right; inscribed “Wool grass – To the Boultons – 1933” lower left</p>
               <p class="acq-work__status acq-work__status--available">Available</p>
-              <p class="acq-work__price">Price on request</p>
+              <p class="acq-work__price">$400</p>
               <a class="link acq-work__more" href="work-jaques-wool-grass.html">View details &rarr;</a>
               <a class="btn acq-work__inquire" href="#inquire" data-work="Bertha E. Jaques (1863–1941), Wool Grass">Inquire about this work</a>
             </div>
           </article>
 
-          <article class="acq-work">
+          <article class="acq-work" data-category="prints">
             <div class="acq-work__image">
               <a href="work-color-lithograph-bird-figure.html">
                 <img src="assets/images/acquisitions/color-lithograph-bird-figure.jpg" width="360" height="360" loading="lazy" decoding="async" alt="A color lithograph in the style of Joan Miró: a bird-like figure with a green, yellow and black head and a red-and-black eye, over a teal splatter ground with airbrushed blue, yellow, pink and black spots, black stars, and red and yellow strokes, on cream paper.">
@@ -266,13 +293,13 @@
               <h3 class="acq-work__title"><a href="work-color-lithograph-bird-figure.html">Untitled (bird figure)</a></h3>
               <p class="acq-work__meta">Color lithograph on cream paper<br>Sheet approx. 11½ × 14 in.<br>Unsigned and unnumbered; no watermark. Printed in the manner of Joan Miró (1893–1983)</p>
               <p class="acq-work__status acq-work__status--available">Available</p>
-              <p class="acq-work__price">Price on request</p>
+              <p class="acq-work__price">$345</p>
               <a class="link acq-work__more" href="work-color-lithograph-bird-figure.html">View details &rarr;</a>
               <a class="btn acq-work__inquire" href="#inquire" data-work="Unattributed, in the style of Joan Miró, Untitled (bird figure)">Inquire about this work</a>
             </div>
           </article>
 
-          <article class="acq-work">
+          <article class="acq-work" data-category="prints">
             <div class="acq-work__image">
               <a href="work-leheutre-harbor-sagot.html">
                 <img src="assets/images/acquisitions/leheutre-harbor-sagot.jpg" width="1254" height="1254" loading="lazy" decoding="async" alt="A harbor scene in fine etched lines: moored sailing boats with tall masts, a church tower and rows of tall houses along the quay, with two small figures in the foreground, on warm cream paper.">
@@ -290,10 +317,10 @@
             </div>
           </article>
 
-          <article class="acq-work">
+          <article class="acq-work" data-category="paintings">
             <div class="acq-work__image">
               <a href="work-estate-of-ron-asche-ladders.html">
-                <img src="assets/images/acquisitions/estate-of-ron-asche-ladders.jpg?v=20261123g" width="360" height="360" loading="lazy" decoding="async" alt="A long, narrow horizontal abstract painting on raw canvas: a pink, white and blue ground with a dark bird-like form, small white ladder shapes and tiny windows, with unpainted cream canvas and loose threads at the edges.">
+                <img src="assets/images/acquisitions/estate-of-ron-asche-ladders.jpg?v=20261127d" width="360" height="360" loading="lazy" decoding="async" alt="A long, narrow horizontal abstract painting on raw canvas: a pink, white and blue ground with a dark bird-like form, small white ladder shapes and tiny windows, with unpainted cream canvas and loose threads at the edges.">
               </a>
               <div class="acq-work__views" aria-hidden="true"></div>
             </div>
@@ -308,7 +335,7 @@
             </div>
           </article>
 
-          <article class="acq-work">
+          <article class="acq-work" data-category="paintings">
             <div class="acq-work__image">
               <a href="work-tripp-blue-and-pink.html">
                 <img src="assets/images/acquisitions/tripp-blue-and-pink.jpg" width="360" height="360" loading="lazy" decoding="async" alt="A small abstract painting: a deep blue rectangle edged in pink, with a bright patch of pink, gold and blue paint at its centre, set on a pale grey-blue canvas with a signature in the lower right of the blue area.">
@@ -323,6 +350,42 @@
               <p class="acq-work__price">Price on request</p>
               <a class="link acq-work__more" href="work-tripp-blue-and-pink.html">View details &rarr;</a>
               <a class="btn acq-work__inquire" href="#inquire" data-work="Signed “Tripp”, Untitled (blue and pink)">Inquire about this work</a>
+            </div>
+          </article>
+
+          <article class="acq-work" data-category="prints">
+            <div class="acq-work__image">
+              <a href="work-jansem-girl-with-a-doll.html">
+                <img src="assets/images/acquisitions/jansem-girl-with-a-doll.jpg" width="1254" height="1254" loading="lazy" decoding="async" alt="A black-and-white lithograph of a girl with dark bobbed hair crouched on the floor, holding a rag doll with wild hair, shown in a thin dark frame.">
+              </a>
+              <div class="acq-work__views" aria-hidden="true"></div>
+            </div>
+            <div class="acq-work__info">
+              <p class="acq-work__artist">Jean Jansem (1920–2013)</p>
+              <h3 class="acq-work__title"><a href="work-jansem-girl-with-a-doll.html"><em>Girl with a Doll</em></a></h3>
+              <p class="acq-work__meta">Lithograph<br>Signed in pencil lower right; numbered 29/100 lower left<br>Mounted in a folded sheet inscribed “Meilleurs Vœux, Jansem”<br>Currently unframed; frame shown for illustration</p>
+              <p class="acq-work__status acq-work__status--available">Available</p>
+              <p class="acq-work__price">$350</p>
+              <a class="link acq-work__more" href="work-jansem-girl-with-a-doll.html">View details &rarr;</a>
+              <a class="btn acq-work__inquire" href="#inquire" data-work="Jean Jansem (1920–2013), Girl with a Doll">Inquire about this work</a>
+            </div>
+          </article>
+
+          <article class="acq-work" data-category="paintings">
+            <div class="acq-work__image">
+              <a href="work-double-sided-abstract-face-lake-landscape.html">
+                <img src="assets/images/acquisitions/double-sided-abstract-face-lake-landscape.jpg" width="1086" height="1448" loading="lazy" decoding="async" alt="An abstract mask-like face with a long pointed nose and narrow dark eyes, painted in textured ochre, rust and black, in a carved gilt-tone frame.">
+              </a>
+              <div class="acq-work__views" aria-hidden="true"></div>
+            </div>
+            <div class="acq-work__info">
+              <p class="acq-work__artist">Unknown artist</p>
+              <h3 class="acq-work__title"><a href="work-double-sided-abstract-face-lake-landscape.html"><em>Abstract Face / Lake Landscape with Swans</em></a></h3>
+              <p class="acq-work__meta">Double-sided painting on board<br>Front: abstract face. Back: lake landscape<br>In a carved gilt-tone frame; no signature seen</p>
+              <p class="acq-work__status acq-work__status--available">Available</p>
+              <p class="acq-work__price">$250</p>
+              <a class="link acq-work__more" href="work-double-sided-abstract-face-lake-landscape.html">View details &rarr;</a>
+              <a class="btn acq-work__inquire" href="#inquire" data-work="Unknown artist, Abstract Face / Lake Landscape with Swans">Inquire about this work</a>
             </div>
           </article>
 
