@@ -203,6 +203,9 @@
 
 /* Acquisitions — available works (shown whole, never cropped) */
 .acq-section { padding-top: var(--sp-6); scroll-margin-top: var(--nav-h); }
+/* Keep Available Works close under the page introduction. */
+.project-hero:has(+ #available.acq-section) { padding-bottom: var(--sp-3); }
+.project-hero + #available.acq-section { padding-top: var(--sp-3); }
 .acq-filter { display: flex; flex-wrap: wrap; justify-content: center; gap: var(--sp-1); margin-bottom: var(--sp-4); }
 .acq-filter[hidden], .acq-filter button[hidden], .acq-work[hidden] { display: none; }
 .acq-filter button { min-height: 44px; padding: 0 var(--sp-3); border: 1px solid var(--c-lilac); border-radius: 999px; background: transparent; color: inherit; font-family: var(--font-sans); font-size: var(--fs-small); cursor: pointer; transition: background-color var(--transition), color var(--transition); }
